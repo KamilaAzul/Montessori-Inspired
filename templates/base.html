@@ -1,89 +1,77 @@
-{% extends 'base.html' %} {% block content %}
+{% load static %}
 
-<div class="masthead">
-  <div class="container">
-    <div class="row g-0">
-      <div class="col-md-6 masthead-text">
-        <!-- Post title goes in these h1 tags -->
-        <h1 class="post-title"></h1>
-        <!-- Post author goes before the | the post's created date goes after -->
-        <p class="post-subtitle">|</p>
-      </div>
-      <div class="d-none d-md-block col-md-6 masthead-image">
-        <!-- The featured image URL goes in the src attribute -->
-        {% if "placeholder" in post.featured_image.url %}
-        <img
-          src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-          width="100%"
-        />
-        {% else %}
-        <img src="" width="100%" />
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html class="h-100">
 
-<div class="container">
-  <div class="row">
-    <div class="col card mb-4 mt-3 left top">
-      <div class="card-body">
-        <!-- The post content goes inside the card-text. -->
-        <!-- Use the | safe filter inside the template tags -->
-        <p class="card-text"></p>
-        <div class="row">
-          <div class="col-1">
-            <!-- The number of likes goes before the closing strong tag -->
-            <strong class="text-secondary"
-              ><i class="far fa-heart"></i>
-            </strong>
-          </div>
-          <div class="col-1">
-            {% with comments.count as total_comments %}
-            <strong class="text-secondary"
-              ><i class="far fa-comments"></i>
-              <!-- Our total_comments variable goes before the closing strong tag -->
-            </strong>
-            {% endwith %}
-          </div>
+<head>
+    <title>CodeStar Blog</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="d-flex flex-column h-100 main-bg">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span
+                        class="thin">|star</span></span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <span class="navbar-text text-muted">
+                    adventures of a software developer
+                </span>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <hr />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col card mb-4 mt-3">
-      <h3>Comments:</h3>
-      <div class="card-body">
-        <!-- We want a for loop inside the tags to iterate through each comment in comments -->
-        {% %}
-        <div class="comments" style="padding: 10px">
-          <p class="font-weight-bold">
-            <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-            {{ }}
-            <span class="text-muted font-weight-normal">
-              <!-- The comment's created date goes here -->
-              {{ }}
-            </span>
-            wrote:
-          </p>
-          <!-- The body of the comment goes before the | -->
-          {{ | linebreaks }}
-        </div>
-        <!-- Our for loop ends here -->
-        {% %}
-      </div>
-    </div>
-    <div class="col-md-8 card mb-4 mt-3">
-      <div class="card-body">
-        <!-- For later -->
-      </div>
-    </div>
-  </div>
-</div>
+    </nav>
 
-{% endblock content %}
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 dark-bg">
+        <p class="m-0 text-center text-white">Made by Code Instituters</p>
+        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-twitter-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i>
+            <i class="fab fa-youtube-square ms-3"></i>
+        </p>
+    </footer>
+</body>
+
+</html>
