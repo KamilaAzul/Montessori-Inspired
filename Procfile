@@ -1,1 +1,1 @@
-web: gunicorn montessori-inspired.wsgi
+web: gunicorn montessori.wsgi

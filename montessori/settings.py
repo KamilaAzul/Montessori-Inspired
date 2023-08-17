@@ -17,24 +17,19 @@ import dj_database_url
 if os.path.isfile("env.py"):
     import env
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 
 ALLOWED_HOSTS = ['montessori-inspired.herokuapp.com', 'localhost',
-                 '8000-kamilaazul-montessori-in-vmwihbgon9.us2.codeanyapp.com']
+                 '8000-kamilaazul-montessori-in-ti9w1g5d77.us2.codeanyapp.com']
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
@@ -71,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'montessori.urls'
 
@@ -146,7 +142,6 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'

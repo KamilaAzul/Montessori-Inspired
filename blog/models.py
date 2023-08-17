@@ -61,13 +61,28 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
+STATUS = ((0, "Draft"), (1, "Published"))
+User = get_user_model()
+
+
+class Profile(models.Model):
+    """
+    Model for user profile
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = CloudinaryField('image')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
+
 class Author(models.Model):
     """
     Model for author
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    author_picture = CloudinaryField('image', default='placeholder')
     timestamp = models.DateTimeField(auto_now_add=True)
+    author_picture = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.user.username
