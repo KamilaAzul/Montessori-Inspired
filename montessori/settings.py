@@ -36,6 +36,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['montessori-inspired.herokuapp.com', 'localhost',
                  '8000-kamilaazul-montessori-in-vmwihbgon9.us2.codeanyapp.com']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 
