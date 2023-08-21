@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['montessori-inspired.herokuapp.com', 'localhost',
+ALLOWED_HOSTS = ['montessori-inspired-a464ed5581f4.herokuapp.com', 'localhost',
                  '8000-kamilaazul-montessori-in-ti9w1g5d77.us2.codeanyapp.com']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
