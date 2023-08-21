@@ -2,9 +2,19 @@ body {
     background-color: #F9FAFC;
 }
 
+/*Navbar*/
+
+.navbar-brand img {
+    margin-right: -180px !important;
+}
+
+.navbar-brand img {
+    width: 50%;
+}
+
 /* Footer */
 
-#footer {
+.footer {
     position: relative;
     padding: 25px;
     margin-top: 50px;
@@ -13,6 +23,17 @@ body {
     width: 100%;
     z-index: 1000;
 }
+
+.footer .text {
+    font-size: 0.9rem;
+
+}
+
+.footer-container {
+    border-top: 1px #D8B646 solid !important;
+}
+
+
 
 .brand {
     font-family: Lato, sans-serif;
@@ -33,7 +54,7 @@ body {
     background-color: #fff;
 }
 
-.rose-bg {
+.dark-bg {
     background-color: #F4DDD8;
 }
 
