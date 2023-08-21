@@ -38,7 +38,7 @@
         <a href="{% url 'home' %}" class="navbar-brand"
           ><img
             src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692617550/static/logo/favicon1.c442146caf3d.png"
-            alt="Montessori Inspired" height="100"
+            alt="Montessori Inspired" class="img-fluid"
           />
         </a>
         <button
@@ -63,22 +63,26 @@
                 >Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="/blog">Blog</a>
             </li>
           </ul>
 
             {% if user.is_authenticated %}
-            <div class="d-flex align-items-center">
+        <ul class="d-flex logout-box">
+            <li class="nav-item">
             
             <button type="button" class="btn btn-link px-3 me-2" href="{% url 'account_logout' %}"> Logout </button>
+            </li>
             {% else %}
-            <button type="button" class="btn btn-secondary"class="btn btn-link px-3 me-2" href="{% url 'account_signup' %}"> Register </button>
-            
-            <button type="button" class="btn btn-secondary" class="btn btn-link px-4 me-2" href="{% url 'account_login' %}"> Login </button>
-        
+            <li class="nav-item">
+            <button type="button" class="btn btn-secondary" class="btn btn-link px-3 me-2" href="{% url 'account_signup' %}"> Register </button>
+        </li>
+            <li class="nav-item">
+            <button type="button" class="btn btn-secondary" class="btn btn-link row gx-5" href="{% url 'account_login' %}"> Login </button>
+        </li>
             {% endif %}
             </div>
         </div>
@@ -89,8 +93,8 @@
       class="p-5 text-center bg-image rounded-3"
       style="
         background-image: url('https://res.cloudinary.com/dsyasuwlk/image/upload/v1692612332/fwjjnk89z50k6divrc39.jpg');
-        height: 1000px;
-      "
+        "
+        class="img-fluid"
     >
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
