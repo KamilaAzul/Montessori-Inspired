@@ -30,17 +30,16 @@
     <!-- CSS style sheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-  <body class="d-flex flex-column h-100 main-bg">
+ 
     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+<!-- Container wrapper -->
+    <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="{% url 'home' %}">
+        <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692698023/static/logo/Logo_2_o6xudb.png" />
+           </a>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a href="{% url 'home' %}" class="navbar-brand"
-          ><img
-            src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692617550/static/logo/favicon1.c442146caf3d.png"
-            alt="Montessori Inspired" class="img-fluid"
-          />
-        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -71,30 +70,28 @@
           </ul>
 
             {% if user.is_authenticated %}
-        <ul class="d-flex logout-box">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            
-            <button type="button" class="btn btn-link px-3 me-2" href="{% url 'account_logout' %}"> Logout </button>
-            </li>
+        <a class="nav-link" href="{% url 'account_logout' %}"> Logout </a>
             {% else %}
             <li class="nav-item">
-            <button type="button" class="btn btn-secondary" class="btn btn-link px-3 me-2" href="{% url 'account_signup' %}"> Register </button>
+            <a class="nav-link" class="btn btn-secondary" class="btn btn-link px-3 me-2" href="{% url 'account_signup' %}"> Register </button>
         </li>
             <li class="nav-item">
-            <button type="button" class="btn btn-secondary" class="btn btn-link row gx-5" href="{% url 'account_login' %}"> Login </button>
-        </li>
+            <a class="nav-link" class="btn btn-secondary" class="btn btn-link row gx-5" href="{% url 'account_login' %}"> Login </a>
             {% endif %}
             </div>
         </div>
       </div>
     </nav>
     <!-- HERO SECTION -->
-    <div
-      class="p-5 text-center bg-image rounded-3"
-      style="
-        background-image: url('https://res.cloudinary.com/dsyasuwlk/image/upload/v1692612332/fwjjnk89z50k6divrc39.jpg');
-        "
-        class="img-fluid"
+    
+    <div class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://res.cloudinary.com/dsyasuwlk/image/upload/v1692692478/heroPhoto_bkvgxz.png');
+      height: 400px;
+      margin-top: 58px;
+    "
     >
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
