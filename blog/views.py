@@ -76,3 +76,10 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def about(request):
+    """
+    Render the about page
+    """
+    return render(request, "about.html")
