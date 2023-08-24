@@ -21,7 +21,7 @@ class Category(models.Model):
     excerpt = models.TextField(blank=True)
 
     class Meta:
-        verbose_name = "Cathegory"
+        verbose_name = "Category"
         verbose_name_plural = 'Categories'
 
     def __str__(self):
