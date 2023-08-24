@@ -10,6 +10,24 @@ STATUS = ((0, "Draft"), (1, "Published"))
 User = get_user_model()
 
 
+class Category(models.Model):
+    """
+    Model for category
+    """
+
+    title = models.CharField(max_length=20)
+    category_image = CloudinaryField('image', default='placeholder')
+    slug = models.SlugField(max_length=100, unique=True, default="", null=True)
+    excerpt = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = "Cathegory"
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.title
+
+
 class Post(models.Model):
     """
     Model for the main blog post
@@ -20,6 +38,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    categories = models.ManyToManyField(Category)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
@@ -86,16 +105,3 @@ class Author(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-class Category(models.Model):
-    """
-    Model for category
-    """
-    class Meta:
-        verbose_name_plural = 'Categories'
-    title = models.CharField(max_length=20)
-    category_image = CloudinaryField('image', default='placeholder')
-
-    def __str__(self):
-        return self.title

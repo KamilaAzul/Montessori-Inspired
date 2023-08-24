@@ -55,10 +55,13 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}" aria-label="Go to the home page">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page"  href="#"aria-label="Go to the about page">About</a>
+                <a class="nav-link active" aria-current="page"  href="{% url 'about' %}"aria-label="Go to the about page">About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#"  aria-label="Go to the about page">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" aria-label="Go to the about page">Categories</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
@@ -128,19 +131,8 @@
                     <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
                 </div>
             </div>
-            
         </div>
-        <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692803561/inTheGraden_hyk7wr.png" class="d-block w-100"
-                height="800px" alt="outdoor">
-                
-                <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
-                    <div class="text-white">
-                        <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">Montessori Activities Outdoors and in Nature</mark></h1>
-                        <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
-                    </div>
-                </div>
-        
+
         </div>
         <div class="carousel-item">
             <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692803561/inTheGraden_hyk7wr.png"
