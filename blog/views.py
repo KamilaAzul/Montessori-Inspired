@@ -66,6 +66,16 @@ class PostDetail(View):
         )
 
 
+class AllBlogPost(generic.ListView):
+    """
+    Render the blog page
+    """
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "blog.html"
+    paginate_by = 9
+
+
 class PostLike(View):
 
     def post(self, request, slug, *args, **kwargs):
