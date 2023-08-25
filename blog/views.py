@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
+from django.db.models import Q
 
 
 class PostList(generic.ListView):
@@ -110,3 +111,19 @@ def categories_view(request, categ):
         categories__title__contains=categ, status=1)
     return render(request, 'categories_posts.html', {
         'categ': categ.title(), 'categories_posts': categories_posts})
+
+    def search(request):
+    """
+    To search for a blog post
+    """
+    q = request.GET.get("q")
+    results = []
+
+    if "q" in request.GET:
+        results = Post.objects.filter(
+            Q(title__icontains=q) | Q(content__icontains=q)
+        ).filter(
+            status=1
+        )
+
+    return render(request, "search.html", {"q": q, "results": results})
