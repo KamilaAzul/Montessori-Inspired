@@ -89,7 +89,7 @@ def categories(request):
     """
     Renders the categories page
     """
-    return render(request, 'posts/categories.html')
+    return render(request, 'categories.html')
 
 
 def categories_view(request, categ):
@@ -98,5 +98,5 @@ def categories_view(request, categ):
     """
     categories_posts = Post.objects.filter(
         categories__title__contains=categ, status=1)
-    return render(request, 'posts/categories_posts.html', {
+    return render(request, 'categories_posts.html', {
         'categ': categ.title(), 'categories_posts': categories_posts})

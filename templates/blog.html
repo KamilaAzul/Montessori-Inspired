@@ -1,0 +1,142 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- CONTENT BLOG SECTION 1-->
+<section id="blog-content-1" class="content">
+  <h2 class="title">The Blog</h2>
+  <div class="container">
+    <div class="row">
+      {% for post in post_list %} {% if forloop.counter == 2%}
+      <div class="col-md-4">
+        <a
+          href="{% url 'post_detail' post.slug %}"
+          aria-label="Go to the post detail page"
+        >
+          <div class="content-box bg-linear-gradient">
+            <div class="content-img">
+              <div class="overlay"></div>
+              <img
+                src="{{ post.featured_image.url }}"
+                alt="{{ post.title }} Image"
+              />
+              <div class="content-categorie">
+                {% for cat in post.categories.all %}
+                <h4><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="content-description">
+              <h4>{{ post.title }}</h4>
+              {% if post.stars == 5 %}
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              {% elif post.stars == 4 %}
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              {% else%}
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-stroke"></i>
+              {% endif %}
+              <div class="time">
+                <i class="fas fa-clock"></i>
+                {{ post.time_to_cook }} Minutes
+              </div>
+              <p>{{ post.overview | slice:":85"}} . . .</p>
+            </div>
+            <div class="author-info">
+              <span
+                ><img
+                  class="author-img"
+                  src="{{ post.author.author_picture.url }}"
+                  alt="{{ post.author }} Image"
+              /></span>
+              <span>{{ post.author }} | </span>
+              <span
+                ><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}|
+              </span>
+              <span
+                ><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span
+              >
+              <span class="text-secondary"
+                >| <i class="far fa-comments"></i
+              ></span>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% else%}
+      <div class="col-md-4">
+        <a
+          href="{% url 'post_detail' post.slug %}"
+          aria-label="Go to the post detail page"
+        >
+          <div class="content-box">
+            <div class="content-img">
+              <div class="overlay"></div>
+              <img
+                src="{{ post.featured_image.url }}"
+                alt="{{ post.title }} Image"
+              />
+              <div class="content-categorie">
+                {% for cat in post.categories.all %}
+                <h4><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="content-description">
+              <h4>{{ post.title }}</h4>
+              {% if post.stars == 5 %}
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              {% elif post.stars == 4 %}
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              {% else%}
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-stroke"></i>
+              {% endif %}
+              <div class="time">
+                <i class="fas fa-clock"></i>
+                {{ post.time_to_cook }} Minutes
+              </div>
+              <p>{{ post.overview | slice:":85"}} . . .</p>
+            </div>
+            <div class="author-info">
+              <span
+                ><img
+                  class="author-img"
+                  src="{{ post.author.author_picture.url }}"
+                  alt="{{ post.author }} Image"
+              /></span>
+              <span>{{ post.author }} | </span>
+              <span
+                ><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}|
+              </span>
+              <span
+                ><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span
+              >
+              <span class="text-secondary"
+                >| <i class="far fa-comments"></i
+              ></span>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- END OF CONTENT BLOG SECTION -->

@@ -1,7 +1,92 @@
-{% extends "base.html" %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692880316/pexels-arina-krasnikova-5119837_qgqrhr.jpg"
+                class="d-block w-100" height="800px" alt="kitchen">
+
+            <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">The Importance of
+                            Practical Life Activities</mark></h1>
+                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692802265/room1_vaohvy.png"
+                class="d-block w-100" height="800px" alt="decor">
+            <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">A Montessori Room For
+                            The Little Ones</mark></h1>
+                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item active">
+            <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692799120/heroPhoto_afx6wj.png"
+                class="d-block w-100" alt="toys">
+            <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">Right Toys At The
+                            Right Time
+                    </h1>
+                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692801735/books_fw44dn.png"
+                class="d-block w-100" height="800px" alt="books">
+            <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3"><mark style="background-color: #855d3f;" class=" text-white">Books for Montessori
+                            Children and Parents</mark></h1>
+                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="carousel-item">
+        <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692803561/inTheGraden_hyk7wr.png"
+            class="d-block w-100" height="800px" alt="outdoor">
+
+        <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">Montessori Activities
+                        Outdoors
+                        and in Nature</mark></h1>
+                <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<!-- END OF HERO Section -->
 
 <div class="container-fluid">
   <div class="row">
+    
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3 left">
       <div class="row">
@@ -22,7 +107,7 @@
                 />
                 {% endif %}
                 <div class="image-flash">
-                  <p class="author">Author: {{ post.author }}</p>
+                  <p class="author">categorie {{ post.categorie }}</p>
                 </div>
               </div>
               <a href="{% url 'post_detail' post.slug  %}" class="post-link">
