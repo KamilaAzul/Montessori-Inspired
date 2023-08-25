@@ -112,7 +112,8 @@ def categories_view(request, categ):
     return render(request, 'categories_posts.html', {
         'categ': categ.title(), 'categories_posts': categories_posts})
 
-    def search(request):
+
+def search(request):
     """
     To search for a blog post
     """
