@@ -1,10 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-
-<!-- SEARCHED RESULTS SECTION -->
-<section id="searched-box">
-    <div class="container box-shadow">
-        <div class="row">
-            <div class="col-md-8 m-auto text-center">
+{% extends 'base.html' %} {% load humanize %} {% load static %} {% block content
+%}
+<section class="my-5 min-vh-80" id="search">
+  <div class="container">
+    <div class="row justify-content-center">
       {% if q %}
       <h2 class="text-center my-4">
         <strong>

@@ -117,10 +117,10 @@ def search(request):
     """
     To search for a blog post
     """
-    q = request.GET.get("q")
+    q = request.POST.get("q")
     results = []
 
-    if "q" in request.GET:
+    if "q" in request.POST:
         results = Post.objects.filter(
             Q(title__icontains=q) | Q(content__icontains=q)
         ).filter(
