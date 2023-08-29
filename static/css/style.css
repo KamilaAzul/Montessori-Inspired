@@ -72,18 +72,35 @@ html {
 }
 
 /*post page*/
+#post-content {
+    padding-top: 20px;
+}
+
+#post_text {
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+#PostedBY {
+    padding-top: 10px;
+}
+
 #PostImageContainer {
     position: relative;
 }
 
+#post-content-img {
+    padding-top: 50px;
+
+}
 
 #bookclateg {
     position: absolute;
-    top: 10%;
+    top: 20%;
     min-width: 15%;
     text-align: center;
     padding-bottom: 2%;
-    left: 70px;
+    left: 20px;
     color: #f5f1f1;
     background-color: rgb(155, 110, 59);
 
@@ -110,6 +127,23 @@ html {
 
 .DownButton {
     background-color: rgb(155, 110, 59);
+}
+
+/*search page*/
+#searched-box {
+    max-width: 90%;
+    background-color: #ddcfcc;
+    text-decoration: none;
+    box-shadow: 8px 6px 6px 8px rgba(108, 73, 23, 0.1);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+#searched-box h2 {
+    text-decoration: none;
 }
 
 /*Sign in, Sign up, Logout*/
