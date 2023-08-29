@@ -1,13 +1,14 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
 <section id="post-content">
-  <div class="container">
+  <div class="container" id="PostImageContainer">
     <div class="row">
       <hr class="hr-small" />
       <div class="col-md-10 mx-auto p-md-3 ">
         {% if "placeholder" in post.featured_image.url %}
         <img
-          class="post-content-img"
+          class="post-img"
+          id="post-content-img"
           src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692973033/BackupImage_aucy1q.png"
           width="100%"
           height="400px"
@@ -15,12 +16,13 @@
         {% else %}
         <img
           src=" {{ post.featured_image.url }}"
+          id="post-content-img"
           width="100%"
           alt="{{ post.title }} Image"
         />
         {% endif %}
 
-        <div class="content-description ">
+        <div class="content-description" id="contentDescriptionPost">
           {% for categ in post.categories.all %}
           <h4 class="pt-3" id="bookclateg"><i class="fa fa-book"></i>{{ categ }}</h4>
           {% endfor %}

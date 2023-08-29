@@ -5,6 +5,7 @@ from .models import Post
 from .forms import CommentForm
 from django.db.models import Q
 from django.views.generic import UpdateView
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -126,18 +127,16 @@ def categories_list(request):
 
 def search(request):
     """
-    To search for a blog post
+    search results
     """
-    q = request.GET.get("q")
-    results = []
+    queryset = request.GET.get('q')
+    post = Post.objects.filter(Q(title__icontains=queryset) |
+                               Q(content__icontains=queryset))
+    if not post:
+        messages.warning(request,
+                         f'Your search for "{queryset}" returned no resuts')
+    context = {
+        "posts": post
+    }
 
-    if "q" in request.GET:
-        results = Post.objects.filter(
-            Q(title__contains=searched) |
-            Q(overview__icontains=searched) |
-            Q(content__icontains=searched)
-        ).filter(
-            status=1
-        )
-
-    return render(request, "search.html", {"q": q, "results": results})
+    return render(request, 'search.html', context)

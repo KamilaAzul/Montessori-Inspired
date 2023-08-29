@@ -71,6 +71,47 @@ html {
     height: 40px;
 }
 
+/*post page*/
+#PostImageContainer {
+    position: relative;
+}
+
+
+#bookclateg {
+    position: absolute;
+    top: 10%;
+    min-width: 15%;
+    text-align: center;
+    padding-bottom: 2%;
+    left: 70px;
+    color: #f5f1f1;
+    background-color: rgb(155, 110, 59);
+
+}
+
+.post_title {
+
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    background-color: rgb(155, 110, 59);
+    color: #f5f1f1;
+}
+
+#recent {
+    padding-bottom: 10px;
+}
+
+.categorie {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.DownButton {
+    background-color: rgb(155, 110, 59);
+}
+
 /*Sign in, Sign up, Logout*/
 #signup_page .container,
 #login_page .container,
@@ -142,40 +183,6 @@ mark {
     color: #f5f1f1;
     background-color: rgb(155, 110, 59);
 
-}
-
-/*post page*/
-
-#bookclateg {
-    position: absolute;
-    bottom: -15%;
-    min-width: 15%;
-    text-align: center;
-    padding-bottom: 10px;
-    left: 200px;
-    color: #f5f1f1;
-    background-color: rgb(155, 110, 59);
-    display: inline-block
-}
-
-#stamp {
-
-    color: rgb(218, 238, 170);
-}
-
-.post_title {
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-
-#recent {
-    padding-bottom: 10px;
-}
-
-.categorie {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
 }
 
 .post-link {
