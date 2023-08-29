@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 from django.db.models import Q
+from django.views.generic import UpdateView
 
 
 class PostList(generic.ListView):
@@ -113,16 +114,28 @@ def categories_view(request, categ):
         'categ': categ.title(), 'categories_posts': categories_posts})
 
 
+def categories_list(request):
+    """Return a list of destinations for the dropdown in the navbar"""
+
+    categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return context
+
+
 def search(request):
     """
     To search for a blog post
     """
-    q = request.POST.get("q")
+    q = request.GET.get("q")
     results = []
 
-    if "q" in request.POST:
+    if "q" in request.GET:
         results = Post.objects.filter(
-            Q(title__icontains=q) | Q(content__icontains=q)
+            Q(title__contains=searched) |
+            Q(overview__icontains=searched) |
+            Q(content__icontains=searched)
         ).filter(
             status=1
         )

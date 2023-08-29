@@ -60,9 +60,22 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'blog' %}"  aria-label="Go to the about page">Blog</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'categories' %}" aria-label="Go to the about page">Categories</a>
-            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'categories' %}"  aria-label="Go to the categories page">Categories</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    {% for category in categories_list %}
+                    <li><a class="dropdown-item" href="{% url 'categories_posts' category.title %}"
+                            aria-label="Go to the each category page">{{ category.title }}</a></li>
+                    {% endfor%}
+                    
+                </ul>
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -76,11 +89,11 @@
             </li>
             {% endif %}
             </ul>
-            <form class="d-flex" method="POST" action="{% url 'search' %}">
+            <form class="d-flex" method="GET" action="{% url 'search' %}">
                                 {% csrf_token %}
 
                 <input class="form-control me-2" name="q" type="search" placeholder="Search Post" aria-label="Search">
-                <button class="btn btn-outline-success me-3" type="submit">Search</button>
+                <button class="btn btn-outline-secondary me-3" type="submit">Search</button>
             </form>
             </div>
         </div>
@@ -153,7 +166,7 @@
         </div>
       </div>
     </footer>
-
+<!--End of the Footer -->
     <script>
       setTimeout(function () {
         let messages = document.getElementById("msg");

@@ -1,9 +1,14 @@
-{% extends "base.html" %} {% load i18n %} {% load account socialaccount %} {%
-block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
+{% extends "base.html" %} 
+
+{% load i18n %} 
+
+{% load account socialaccount %}
+
+{% trans "Sign In" %}{% block content %}
 
 <!-- LOGIN SECTION -->
 
-<section class="logs-pages">
+<section class="login_page" id="login_page">
   <div class="container box-shadow">
     <div class="row align-items-center">
       <div class="col-md-6 mt-5 offset-md-2">
@@ -13,30 +18,24 @@ block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
           {% blocktrans %}Welcome back to Montessori Inspired. If you would like
           to leave a comment or like a post, please log in. If you don't have
           your account yet, please
-          <a class="link" href="{{ signup_url }}">sign up</a> first.{%
-          endblocktrans %}
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2 text-dark">
-        <form class="login" method="POST" action="{% url 'account_login' %}">
-          {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
-          <input
-            type="hidden"
-            name="{{ redirect_field_name }}"
-            value="{{ redirect_field_value }}"
-          />
-          {% endif %}
-          <button
-            class="btn btn-signup btn-lg right btn-success mt-3 mb-5"
-            type="submit"
-          >
-            {% trans "Sign In" %}
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
+          <a class="link" href="{{ signup_url }}">sign up</a>
+        first.{% endblocktrans %}</p>
+        </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-8 mt-3 offset-md-2 pb-5">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                </form>
+            </div>
+        </div>
+        </div>
+        </section>
+        <!-- END OF LOGIN SECTION -->
+        {% endblock %}
 </section>
-{% endblock %}

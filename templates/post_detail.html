@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <hr class="hr-small" />
-      <div class="col-md-10 mx-auto p-md-3">
+      <div class="col-md-10 mx-auto p-md-3 ">
         {% if "placeholder" in post.featured_image.url %}
         <img
           class="post-content-img"
@@ -20,24 +20,24 @@
         />
         {% endif %}
 
-        <div class="content-description">
+        <div class="content-description ">
           {% for categ in post.categories.all %}
-          <h4 class="pt-3"><i class="fa-brands fa-readme"></i>{{ categ }}</h4>
+          <h4 class="pt-3" id="bookclateg"><i class="fa fa-book"></i>{{ categ }}</h4>
           {% endfor %}
-          <h2>{{ post.title }}</h2>
-          <p class="post-author">
+          <h2 class="post_title font-monospace">{{ post.title }}</h2>
+          <p class="post-author font-monospace">
             <img
               src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692968358/faviconRainbow-removebg-preview_om2znl.png"
               height="25"
               alt="Logo"
               loading="lazy"
-            />Posted by : {{ post.author }} | {{ post.created_on }}
+            />Posted by :  {{ post.author }} | {{ post.created_on }}
           </p>
   </div>
   
           <!-- The post content goes inside the card-text. -->
           <!-- Use the | safe filter inside the template tags -->
-          <p class="card-text">{{ post.content | safe }}</p>
+          <p class="card-text ">{{ post.content | safe }}</p>
           <div class="row">
             <div class="col-1">
             <strong>
@@ -82,13 +82,13 @@
                 <div class="card text-dark">
                     <div class="card-body p-4">
                         
-                        <h3>Leave a comment:</h3>
+                        <h3 class="font-monospace">Leave a comment:</h3>
                         <p>Posting as: {{ user.username }}</p>
                         <form method="post" style="margin-top: 1.3em">
                             {{ comment_form | crispy }} {% csrf_token %}
                             <button type="submit" class="m-3 btn btn-signup btn-lg" >Submit</button>
                         </form>
-                        <h4 class="mb-0">Recent comments</h4>
+                        <h4 class="mb-0 font-monospace" id="recent">Recent comments</h4>
                         <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
           <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
           {% for comment in comments %}

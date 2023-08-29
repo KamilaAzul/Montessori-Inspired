@@ -1,11 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
 <!-- CATEGORIES SECTION -->
+
 <section id="content" class="content content-categories">
   <h2 class="title">Categories</h2>
   <div class="container box-shadow">
     <div class="row">
-      {{ cats }} {% for category in categories_list %}
+      {{ categ }} {% for category in categories_list %}
       <div class="col-md-4">
         <a
           href="{% url 'categories_posts' category.title %}"

@@ -1,17 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: #F9FAFC;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.fas,
+.far,
+.fab,
+.fa,
+.fa-solid,
+.dropdown-toggle::after {
+    margin-right: 6px;
+    cursor: pointer;
+}
+
 /*Navbar*/
 
-.heroImage {
-
-    height: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
 
 /* Footer */
 
@@ -19,19 +31,70 @@ body {
     position: relative;
     padding: 25px;
     margin-top: 50px;
-    background-color: black;
-    color: rgb(194, 139, 44);
     width: 100%;
     z-index: 1000;
 }
 
 .footer .text {
-    font-size: 0.9rem;
+    font-size: 0.12rem;
 
 }
 
+/* Blog page */
+
+#blog-page {
+    margin-top: 70px;
+
+}
+
+.card-title {
+    padding-top: 20px;
+}
+
+.image-container {
+
+    width: 100%;
+
+}
+
+.content-box {
+    -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
+    box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    background-color: #ddcfcc;
+}
+
+.content-description p {
+    margin-top: 10px;
+    height: 40px;
+}
+
+/*Sign in, Sign up, Logout*/
+#signup_page .container,
+#login_page .container,
+#logout_page .container {
+
+    margin-bottom: 250px;
+    margin-top: 150px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    box-shadow: 8px 6px 6px 8px rgba(108, 73, 23, 0.1);
+
+}
+
+#signup p,
+#signin p {
+    font-size: 1.2rem;
+}
+
+#logout p {
+    font-size: 1.4rem;
+}
+
 mark {
-    background-color: rgb(194, 139, 44);
+
     color: black;
 }
 
@@ -71,15 +134,45 @@ mark {
     position: relative;
 }
 
-.image-flash {
+.content-img {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
-    background-color: #cea764;
+    left: -8px;
+    color: #f5f1f1;
+    background-color: rgb(155, 110, 59);
+
 }
 
-.author {
+/*post page*/
+
+#bookclateg {
+    position: absolute;
+    bottom: -15%;
+    min-width: 15%;
+    text-align: center;
+    padding-bottom: 10px;
+    left: 200px;
+    color: #f5f1f1;
+    background-color: rgb(155, 110, 59);
+    display: inline-block
+}
+
+#stamp {
+
+    color: rgb(218, 238, 170);
+}
+
+.post_title {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#recent {
+    padding-bottom: 10px;
+}
+
+.categorie {
     color: white;
     margin: 4px;
     text-transform: uppercase;
@@ -92,7 +185,7 @@ mark {
 
 .post-link:hover,
 .page-link {
-    color: rgb(109, 58, 41);
+    color: rgb(255, 255, 255);
 }
 
 .post-title {
