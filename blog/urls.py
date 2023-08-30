@@ -10,5 +10,10 @@ urlpatterns = [
          name="categories_posts"),
     path("blog", views.AllBlogPost.as_view(), name="blog"),
     path('search/', views.search, name="search"),
-     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path(
+        "delete_post/<slug:slug>/",
+        views.DeletePost.as_view(),
+        name="delete-post",
+    ),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]

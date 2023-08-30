@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 from django.db.models import Q
 from django.views.generic import UpdateView
-from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -140,3 +142,23 @@ def search(request):
     }
 
     return render(request, 'search.html', context)
+
+
+class DeletePost(generic.DeleteView):
+    """
+    Class to allow to delete a post
+    """
+    model = Post
+    template_name = "delete_post.html"
+    success_message = "Post was deleted successfully."
+
+    def delete(self, request, *args, **kwargs):
+        messages.warning(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        """
+        Set the reverse url for the successful delete
+        of the post to the database
+        """
+        return reverse("user-post-list")
