@@ -3,12 +3,14 @@ from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post
+from django.contrib import messages
 from .forms import CommentForm
 from django.db.models import Q
 from django.views.generic import UpdateView
+from .forms import AddPostForm, UpdatePostForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.decorators import login_required
 
 class PostList(generic.ListView):
     model = Post
@@ -162,3 +164,33 @@ class DeletePost(generic.DeleteView):
         of the post to the database
         """
         return reverse("user-post-list")
+
+
+@login_required()
+def update_post(request, slug):
+    """
+    Users can update their blog post that they have created
+    """
+    post = get_object_or_404(Post, slug=slug)
+    if request.user.id == post.author.id:
+        if request.method == "POST":
+            form = UpdatePostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.slug = slugify(post.title)
+                post.status = 1
+                form.save()
+                messages.success(
+                    request, "Your post was updated successfully!")
+                return redirect(reverse("user-post-list"))
+            else:
+                messages.error(request, "Failed to update the post.")
+        else:
+            form = UpdatePostForm(instance=post)
+    else:
+        messages.error(request, "Sorry, This is not your post.")
+
+    template = ("update_post.html",)
+    context = {"form": form, "post": post}
+    return render(request, template, context)

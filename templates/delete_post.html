@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<section class="my-5 min-vh-80" id="delete-post">
+    {% if user.id == post.author.id %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 mt-1 offset-md-2">
+                <form method="POST" action="{% url 'delete-post' post.slug %}">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <h3 class="mt-5"> Hello {{ user }}, <br>Are you sure you want to delete this post: "{{
+                        post.title }}"?</h3>
+                    <a href="{% url 'delete-post' post.slug %}">
+                        <button class="btn btn-lg btn-danger delete-btn my-3">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <h2>This post wasn't created by you. You can only delete the post which you have created</h2>
+    {% endif %}
+</section>
+{% endblock %}
