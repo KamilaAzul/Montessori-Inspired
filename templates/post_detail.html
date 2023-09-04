@@ -71,11 +71,11 @@
     </div>
     <!-- Only visible to the author of the post-->
     {% if user.id == post.author.id %}
-    <div class="row">
+    <div class="row" >
         <div class="d-flex justify-content-center">
-            <a href="{% url 'update-post' post.slug  %}" role="button" class="btn btn-info mx-2 text-dark"><strong>Edit
+            <a href="{% url 'update-post' post.slug  %}" id="update-post-button" role="button" class="mx-2  btn btn-signup btn-lg"><strong>Edit
                     Post</strong> </a>
-            <a href="{% url 'delete-post' post.slug  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete
+            <a href="{% url 'delete-post' post.slug  %}" role="button" class="mx-2  btn btn-signup btn-lg"><strong>Delete
                     Post</strong></a>
         </div>
     </div>

@@ -15,7 +15,7 @@ class CommentForm(forms.ModelForm):
         fields = ('body', )
 
 
-class AddPostForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     """
     Form to add a blog post
     """
@@ -25,7 +25,9 @@ class AddPostForm(forms.ModelForm):
             "title",
             "categories",
             "content",
+             "featured_image",
         )
+        
 
 
 class UpdatePostForm(forms.ModelForm):

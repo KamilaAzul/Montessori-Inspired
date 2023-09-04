@@ -10,6 +10,7 @@ urlpatterns = [
          name="categories_posts"),
     path("blog", views.AllBlogPost.as_view(), name="blog"),
     path('search/', views.search, name="search"),
+    path('new_post/', views.create_post, name='new_post'),
     path("update_post/<slug:slug>/", views.update_post, name="update-post"),
     path(
         "delete_post/<slug:slug>/",

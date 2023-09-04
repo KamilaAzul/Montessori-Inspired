@@ -1,13 +1,14 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse,redirect
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post
+from django.utils.text import slugify
 from django.contrib import messages
 from .forms import CommentForm
 from django.db.models import Q
 from django.views.generic import UpdateView
-from .forms import AddPostForm, UpdatePostForm
+from .forms import PostForm, UpdatePostForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -119,16 +120,6 @@ def categories_view(request, categ):
         'categ': categ.title(), 'categories_posts': categories_posts})
 
 
-def categories_list(request):
-    """Return a list of destinations for the dropdown in the navbar"""
-
-    categories = Category.objects.all()
-    context = {
-        'categories': categories
-    }
-    return context
-
-
 def search(request):
     """
     search results
@@ -194,3 +185,26 @@ def update_post(request, slug):
     template = ("update_post.html",)
     context = {"form": form, "post": post}
     return render(request, template, context)
+
+@login_required
+def create_post(request):
+    context = {}
+    form = PostForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            print("\n\n form is valid")
+            new_post = form.save(commit=False)
+            new_post.author = request.user
+            new_post.save()
+
+            return redirect('blog')
+        
+    context.update({
+            'form': form,
+            'title': 'Create New Post'
+    })
+    return render(request, 'new_post.html', context)
+   
+
+
+

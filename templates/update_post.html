@@ -1,15 +1,19 @@
-{% extends 'base.html' %} {% block content %} {% load static %} {% load
-crispy_forms_tags %}
-<section id="update-post">
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section id="update" class="update_post">
   {% if user.id == post.author.id %}
-  <div class="container-fluid p-2 bg-success text-dark bg-opacity-10">
-    <div class="row justify-content-center">
-      <div class="col-sm-10 mt-1">
-        <h2 class="mt-3 text-center">Hello<span>{{ user }}</span></h2>
-        <h3 class="mt-2 text-center">Would you like to update your post:</h3>
-        <form method="POST" enctype="multipart/form-data" class="input-fields">
-          {% csrf_token %} {{ form | crispy }}
-          <button type="submit" value="Update" class="btn btn-success my-3">
+  <div class="container-fluid p-2 text-dark bg-opacity-10">
+    <div class="row">
+      <div class="col-md-8 m-auto text-center">
+        <h2 class="mt-3 text-center font-monospace">Hello<span>{{ user }}</span></h2>
+        <h3 class="mt-2 text-center font-monospace">Would you like to update your post:</h3>
+        <form method="POST" enctype="multipart/form-data" class="input-fields" id="updatePost"
+        style="background-color: #ddcfcc;">
+         {% csrf_token %}
+             {{ form.as_p }} 
+          <button type="submit" value="Update" class="mx-2  btn btn-signup btn-lg">
             Update
           </button>
         </form>

@@ -131,7 +131,36 @@ html {
 .DownButton {
     background-color: rgb(155, 110, 59);
 }
+/*update-post page*/
 
+#update #updatePost{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-bottom:20px;
+}
+/*Delete Post page*/
+
+#delete-post .deletePost{
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-bottom:20px;
+}
+
+.deletePost h3{
+
+    padding:5px;
+}
 /*search page*/
 
 #searched-box .container {
