@@ -131,36 +131,49 @@ html {
 .DownButton {
     background-color: rgb(155, 110, 59);
 }
+
 /*update-post page*/
 
-#update #updatePost{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding-bottom:20px;
+#update_post {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
 }
+
+/*New Post Page*/
+
+#addNewPost .container {
+    padding-top: 100px;
+    margin-top: 200px;
+    background-color: blue;
+
+}
+
 /*Delete Post page*/
 
-#delete-post .deletePost{
+#delete-post .deletePost {
 
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding-bottom:20px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
 }
 
-.deletePost h3{
+.deletePost h3 {
 
-    padding:5px;
+    padding: 5px;
 }
+
 /*search page*/
 
 #searched-box .container {
@@ -349,4 +362,23 @@ mark {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+/*update page*/
+
+#update-box {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+#update-button-form {
+    margin: 10px;
+}
+
+.form #updatePost {
+    padding: 10px;
+}
+
+#update-box {
+    margin-top: 100px;
 }

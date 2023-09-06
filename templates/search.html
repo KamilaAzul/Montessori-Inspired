@@ -1,42 +1,36 @@
 {% extends 'base.html' %} {% load static %} {% block content %} {% include "components/hero_small.html" %}
 
-<section id="searched-box" id="search" class="container-fluid">
-
+<section id="searched-box">
+    <div class="container box-shadow">
+        <div class="row">
+            <div class="col-md-8 m-auto text-center">
   {% if posts %}
-  
-    <div class="row">
-      <div class="col-md-8 m-auto text-center">
         <h3 class="mb-3 font-monospace" id="searched-text">
-          You Searched for <span class="text-success">"{{ queryset}}"</span>
-        </h2>
+          You Searched for <span class="text-success">"{{queryset}}"</span>
+        </h3>
         <br />
       </div>
     </div>
-<div class="container box-shadow">
+    <!-- search results -->
     {% for post in posts %}
+    <div class="content-description" id="serchPostDescription">
+        <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+    </div>
     <div class="row row-results">
-      <div class="col-md-6 p-3">
-        
-        <div class="content-description" id="serchPostDescription">
-            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-            </div>
+        <div class="col-md-6 p-3">
           <h2 class="card-title post-link">{{ post.title }}</h2>
-        </a>
-        
-
         <p class="card-text">
           {{post.content|slice:":280" | safe }}
         </p>
-        
         <div class="card-footer">
             <p class="text-muted">
                 Author: {{ post.author }}
                 <!-- Only users that are logged in can edit/ delete their own post -->
                 {% if user.id == post.author.id %}
-                <strong><a class="text-dark ms-2" href="{% url 'update-post' post.slug %}">
+                <strong><a class="text-dark link-warning" href="{% url 'update-post' post.slug %}">
                         Edit</a></strong>
                 |
-                <strong><a class="text-danger" href="{% url 'delete-post' post.slug %}">
+                <strong><a class="text-danger link-warning" href="{% url 'delete-post' post.slug %}">
                         Delete</a></strong>
                 {% endif %}
             </p>
@@ -45,20 +39,17 @@
           <span class="text-secondary"> | <i class="far fa-comments"></i></span>
         </div>
       </div>
-
-      <div class="col-md-6">
-        <div id="seachIMG">
+        <div class="col-md-6">
         <img class="mb-3 box-shadow bg-linear-gradient "
             src="{{ post.featured_image.url }}"
-            style="max-height: 60%; max-width: 60%; object-fit: contain"
+            style="max-height: 90%; max-width: 90%; object-fit: contain "
             alt="{{ result }} Image"
           />
-          {% empty %}
-        </div>
+        
       </div>
-
-      <div class="results-null">
-        <div class="row">
+    </a>
+    <hr>
+    {% empty %}
           <div class="col-md-12" style="text-align: center">
             <h2>We Are Sorry</h2>
             <p>
@@ -78,6 +69,7 @@
         </div>
       </div>
        </div>
+</div>
       {% endif %}
    
   </div>

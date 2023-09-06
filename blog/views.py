@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse,redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
@@ -12,6 +12,7 @@ from .forms import PostForm, UpdatePostForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+
 
 class PostList(generic.ListView):
     model = Post
@@ -131,7 +132,8 @@ def search(request):
         messages.warning(request,
                          f'Your search for "{queryset}" returned no resuts')
     context = {
-        "posts": post
+        "posts": post,
+        'queryset': queryset
     }
 
     return render(request, 'search.html', context)
@@ -186,6 +188,7 @@ def update_post(request, slug):
     context = {"form": form, "post": post}
     return render(request, template, context)
 
+
 @login_required
 def create_post(request):
     context = {}
@@ -198,13 +201,9 @@ def create_post(request):
             new_post.save()
 
             return redirect('blog')
-        
+
     context.update({
-            'form': form,
-            'title': 'Create New Post'
+        'form': form,
+        'title': 'Create New Post'
     })
     return render(request, 'new_post.html', context)
-   
-
-
-

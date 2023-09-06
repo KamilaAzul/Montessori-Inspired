@@ -25,9 +25,8 @@ class PostForm(forms.ModelForm):
             "title",
             "categories",
             "content",
-             "featured_image",
+            "featured_image",
         )
-        
 
 
 class UpdatePostForm(forms.ModelForm):
@@ -41,4 +40,5 @@ class UpdatePostForm(forms.ModelForm):
             "title",
             "categories",
             "content",
+            "featured_image",
         )
