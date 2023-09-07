@@ -53,7 +53,7 @@
                     {{ post.content | slice:":250" | safe }}...
                 </div>
               <hr />
-              <p class="card-text text-muted h6">
+              <p class="card-text text-muted h6"><span><img class="author-img" src="{{ post.author.author_picture.url }}" alt="{{ post.author }} Image"></span>
                 {{ post.created_on}} <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
               </p>
             </div>

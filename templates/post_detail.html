@@ -35,7 +35,6 @@
             <p class="post-author font-monospace" id="PostedBY">
                 <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692968358/faviconRainbow-removebg-preview_om2znl.png"
                     height="25" alt="Logo" loading="lazy" />Posted by : {{ post.author }} | {{ post.created_on }}
-                    <span><img class="author-img" src="{{ post.author.author_picture.url }}" alt="{{ post.author }} Image"></span>
             </p>
           <p class="mt-3 text-justify">{{ post.content | safe }}</p>
         
