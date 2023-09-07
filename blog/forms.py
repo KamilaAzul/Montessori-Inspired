@@ -4,6 +4,7 @@ from .models import Post
 from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Profile
 
 
 class CommentForm(forms.ModelForm):
@@ -42,3 +43,23 @@ class UpdatePostForm(forms.ModelForm):
             "content",
             "featured_image",
         )
+
+
+class UserUpdateForm(forms.ModelForm):
+    """
+    Form for profile name update
+    """
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    """
+    Form for profile image update
+    """
+    class Meta:
+        model = Profile
+        fields = ['image']

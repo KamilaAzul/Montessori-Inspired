@@ -151,7 +151,6 @@ html {
 #addNewPost .container {
     padding-top: 100px;
     margin-top: 200px;
-    background-color: blue;
 
 }
 
@@ -256,6 +255,10 @@ html {
 
 #logout p {
     font-size: 1.4rem;
+}
+
+#login_page p {
+    background-color: #E84610;
 }
 
 mark {

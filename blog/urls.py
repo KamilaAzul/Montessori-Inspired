@@ -8,7 +8,7 @@ urlpatterns = [
     path('categories', views.categories, name="categories"),
     path('categories_posts<str:categ>', views.categories_view,
          name="categories_posts"),
-    path("blog", views.AllBlogPost.as_view(), name="blog"),
+    path('blog', views.AllBlogPost.as_view(), name='blog'),
     path('search/', views.search, name="search"),
     path('new_post/', views.create_post, name='new_post'),
     path("update_post/<slug:slug>/", views.update_post, name="update-post"),
@@ -17,5 +17,6 @@ urlpatterns = [
         views.DeletePost.as_view(),
         name="delete-post",
     ),
+    path('profile_page', views.profile_view, name='profile-page'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]
