@@ -1,10 +1,8 @@
-from .models import Comment
-from django import forms
-from .models import Post
-from django.forms import ModelForm
+from .models import UserProfile
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 from django import forms
-from .models import Profile
+from .models import Comment, Post, UserProfile
 
 
 class CommentForm(forms.ModelForm):
@@ -61,5 +59,5 @@ class ProfileUpdateForm(forms.ModelForm):
     Form for profile image update
     """
     class Meta:
-        model = Profile
+        model = UserProfile
         fields = ['image']

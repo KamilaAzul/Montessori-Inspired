@@ -4,6 +4,10 @@ from django.urls import path
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
+    path('edit_comment/<int:pk>', views.EditComment.as_view(),
+         name='edit_comment'),
+    path('delete_comment/<int:comment_id>', views.delete_comment,
+         name='delete_comment'),
     path("about", views.about, name="about"),
     path('categories', views.categories, name="categories"),
     path('categories_posts<str:categ>', views.categories_view,
@@ -17,6 +21,5 @@ urlpatterns = [
         views.DeletePost.as_view(),
         name="delete-post",
     ),
-    path('profile_page', views.profile_view, name='profile-page'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]

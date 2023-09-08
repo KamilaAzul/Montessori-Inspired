@@ -84,16 +84,18 @@ STATUS = ((0, "Draft"), (1, "Published"))
 User = get_user_model()
 
 
-class Profile(models.Model):
+class UserProfile(models.Model):
     """
     Model for user profile
-    """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = CloudinaryField('image')
-    bio = models.TextField()
 
-    def __str__(self):
-        return f'{self.user.username} Profile'
+    """
+
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                related_name='profile')
+    presentation = models.TextField(max_length=500)
+    image = CloudinaryField('image', default='default_image')
 
 
 class Author(models.Model):

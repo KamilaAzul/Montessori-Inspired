@@ -7,17 +7,18 @@
   <div class="container mb-5 col-md-8">
     <div class="row align-items-center">
       <div class="col-md-6 mt-5 offset-md-2">
-        <h2 class="mt-2">{% trans "Sign Up" %}</h2>
-        <p class="mt-2">
-          {% blocktrans %}Already have an account? Then please
-          <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
-        </p>
+        <h2 class="mt-2 font-monospace p-2">{% trans "Sign Up" %}</h2>
+        <h6 class="p-2">
+          {% blocktrans %}Do you have an account already? Then, please
+          <a class="link p-2" href="{{ login_url }}">sign in</a>
+          first.{% endblocktrans %}
+        </h6>
       </div>
     </div>
     <div class="row align-items-center">
       <div class="col-md-8 mt-3 offset-md-2 pb-5">
         <form
-          class="signup"
+          class="login p-2 signup"
           id="signup_form"
           method="post"
           action="{% url 'account_signup' %}"

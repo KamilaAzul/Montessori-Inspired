@@ -2,13 +2,13 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, UserProfile, Comment
 from django.utils.text import slugify
 from django.contrib import messages
-from .forms import CommentForm
 from django.db.models import Q
 from django.views.generic import UpdateView
-from .forms import PostForm, UpdatePostForm, UserUpdateForm, ProfileUpdateForm
+from .forms import PostForm,  ProfileUpdateForm, UserUpdateForm, CommentForm
+from .forms import UpdatePostForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -117,8 +117,12 @@ def categories_view(request, categ):
     """
     categories_posts = Post.objects.filter(
         categories__title__contains=categ, status=1)
-    return render(request, 'categories_posts.html', {
-        'categ': categ.title(), 'categories_posts': categories_posts})
+
+    return render(
+        request,
+        "categories_post.html",
+        {"categ": categ.title(), 'categories_posts': categories_posts},
+    )
 
 
 def search(request):
@@ -209,26 +213,23 @@ def create_post(request):
     return render(request, 'new_post.html', context)
 
 
-@login_required
-def profile_view(request):
+class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
-    Renders the profile page
+    Edit comment
     """
-    if request.method == 'POST':
-        user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(
-            request.POST, request.FILES, instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            messages.success(request, 'Your account has been updated!')
-            return redirect('profile')
-    else:
-        user_form = UserUpdateForm(instance=request.user)
-        profile_form = ProfileUpdateForm(instance=request.user.profile)
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+    success_message = 'The comment was successfully updated'
 
-    context = {
-        'user_form': user_form,
-        'profile_form': profile_form,
-    }
-    return render(request, 'profile_page.html', context)
+
+@login_required
+def delete_comment(request, comment_id):
+    """
+    Delete comment
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    messages.success(request, 'The comment was deleted successfully')
+    return HttpResponseRedirect(reverse(
+        'post_detail', args=[comment.post.slug]))

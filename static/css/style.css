@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Mulish:wght@300&display=swap');
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -149,9 +147,13 @@ html {
 /*New Post Page*/
 
 #addNewPost .container {
-    padding-top: 100px;
-    margin-top: 200px;
+    padding-top: 50px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
 
+#NewPostButton {
+    margin-top: 5px;
 }
 
 /*Delete Post page*/
@@ -257,9 +259,6 @@ html {
     font-size: 1.4rem;
 }
 
-#login_page p {
-    background-color: #E84610;
-}
 
 mark {
 
