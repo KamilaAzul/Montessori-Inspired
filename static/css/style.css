@@ -56,8 +56,16 @@ html {
 /* Blog page */
 
 #blog-page {
-    margin-top: 70px;
+    margin-top: 90px;
+}
 
+#blog-page h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#Add_new_post {
+    padding-bottom: 10px;
 }
 
 .card-title {
@@ -141,6 +149,30 @@ html {
 
 .DownButton {
     background-color: rgb(155, 110, 59);
+}
+
+/*Update Post Page*/
+
+#updatePostPage {
+    margin-top: 120px;
+}
+
+#updatePostPage h3 {
+    padding-bottom: 20px;
+}
+
+#updatePostPage .container {
+    margin-bottom: 30px;
+}
+
+#updatePost {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+#update-button-form {
+
+    margin-bottom: 10px;
 }
 
 /* user post page*/
