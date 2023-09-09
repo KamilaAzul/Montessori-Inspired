@@ -23,7 +23,20 @@ html {
 }
 
 /*Navbar*/
+#mainNav {
+    position: fixed;
+    box-shadow: rgb(1 1 1 / 50%) 1px 10px 10px -1px;
 
+}
+
+.search_box {
+    margin-right: 10px;
+    margin-top: 35px;
+}
+
+#button_search {
+    margin-left: 3px;
+}
 
 /* Footer */
 
@@ -127,6 +140,22 @@ html {
 }
 
 .DownButton {
+    background-color: rgb(155, 110, 59);
+}
+
+/* user post page*/
+#user-posts {
+    margin-top: 30px;
+}
+
+#User_postCateg {
+    position: absolute;
+    top: 10%;
+    min-width: 15%;
+    text-align: center;
+    left: 20px;
+    max-height: 20px;
+    color: #f5f1f1;
     background-color: rgb(155, 110, 59);
 }
 

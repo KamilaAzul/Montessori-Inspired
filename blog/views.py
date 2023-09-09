@@ -160,7 +160,7 @@ class DeletePost(generic.DeleteView):
         Set the reverse url for the successful delete
         of the post to the database
         """
-        return reverse("user-post-list")
+        return reverse("user-posts")
 
 
 @login_required()
@@ -180,7 +180,7 @@ def update_post(request, slug):
                 form.save()
                 messages.success(
                     request, "Your post was updated successfully!")
-                return redirect(reverse("user-post-list"))
+                return redirect(reverse("user-posts"))
             else:
                 messages.error(request, "Failed to update the post.")
         else:
@@ -213,6 +213,21 @@ def create_post(request):
     return render(request, 'new_post.html', context)
 
 
+class UserPost(LoginRequiredMixin, generic.ListView):
+    """
+    Shows all posts of a logged-in user in one page
+    """
+    model = Post
+    author = Post.author
+    template_name = "user_posts.html"
+
+    def get_queryset(self, *args, **kwargs):
+        return Post.objects.filter(
+            author=self.request.user, status=1).order_by(
+            "-created_on"
+        )
+
+
 class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     Edit comment
@@ -221,6 +236,13 @@ class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'edit_comment.html'
     form_class = CommentForm
     success_message = 'The comment was successfully updated'
+
+    def get_success_url(self):
+        """
+        Set the reverse url for the successful edit of comment
+        of the post to the database
+        """
+        return reverse("user-posts")
 
 
 @login_required

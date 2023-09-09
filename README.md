@@ -229,6 +229,7 @@ The user can choose which post to read by clicking on the post card.<br>
 ### **Logout Page](#logout-page)
 ### **User Profile Page](#user-profile-page)
 ### **Profile Update](#profile-update)
+### ** New Post 
 ### **Navbar](#navbar)
 ### **Footer](<#footer>)
 ### **Like Post](#like-post)
