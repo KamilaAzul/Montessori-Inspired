@@ -4,51 +4,43 @@
     <div class="container box-shadow">
         <div class="row">
             <div class="col-md-8 m-auto text-center">
-  {% if posts %}
-        <h3 class="mb-3 font-monospace" id="searched-text">
-          You Searched for <span class="text-success">"{{queryset}}"</span>
-        </h3>
-        <br />
-      </div>
-    </div>
+              {% if posts %}
+               <h3 class="mb-3 font-monospace" id="searched-text">
+               You Searched for <span class="text-success">"{{queryset}}"</span>
+               </h3>
+                <br />
+             </div>
+         </div>
     <!-- search results -->
-    {% for post in posts %}
-    <div class="content-description" id="serchPostDescription">
+
+        {% for post in posts %}
+    <div class="content-description">
         <a href="{% url 'post_detail' post.slug  %}" class="post-link">
     </div>
-    
-    <div class="row row-results">
-        <div class="col-md-6 p-3">
-          <h2 class="card-title post-link">{{ post.title }}</h2>
-        <p class="card-text">
-          {{post.content|slice:":280" | safe }}
-          
-        </p>
-        {% if user.id == post.author.id %}
-        <strong><a class="text-dark link-warning" href="{% url 'update-post' post.slug %}">
-                Edit</a></strong>
-        |
-        <strong><a class="text-danger link-warning" href="{% url 'delete-post' post.slug %}">
-                Delete</a></strong>
-        {% endif %}
-        </p>
-        <span>{{ post.created_on}} | </span>
-        <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-        <span class="text-secondary"> | <i class="far fa-comments"></i></span>
-      </div>
-
-        <div class="col-md-6">
-        <img class="mb-3 box-shadow bg-linear-gradient "
-            src="{{ post.featured_image.url }}"
-            style="max-height: 90%; max-width: 90%; object-fit: contain "
-            alt="{{ result }} Image"/>
-        </div>
-    </div>
-    </a>
+            <div class="row row-results" id="serchPostDescription">
+                <div class="col-md-6 p-3">
+                    <h2 class="card-title post-link">{{ post.title }} </h2>
+                    <p class="card-text" >{{post.content|slice:":280" | safe }} <a href="{% url 'post_detail' post.slug  %}"></a></p>
+                
+                    <span>{{ post.created_on}} | </span>
+                    <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                    <span class="text-secondary" > | <i class="far fa-comments"></i></span>
+                    {% if user.id == post.author.id %}
+                    </p>
+                    <strong><a class="btn btn-outline btn-signup ms-2" href="{% url 'update-post' post.slug %}"> Edit</a></strong> |
+                    <strong><a class="btn btn-outline btn-signup" href="{% url 'delete-post' post.slug %}">
+                            Delete</a></strong>
+                    {% endif %}
+                  
+                </div>
+                <div class="col-md-6" id="post_img">
+                    <img src="{{ post.featured_image.url }}"
+                 style="max-height: 90%; max-width: 90%; object-fit: contain "
+                  alt="{{ result }} Image"/>
+                </div>
+            </div>
     <hr>
-    
-    </div>
-    </div>
+
     {% endfor %}
     {% else %}
 <div class="results-empty" id="ForgorToSeach">
