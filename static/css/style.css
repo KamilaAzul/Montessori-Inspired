@@ -38,6 +38,10 @@ html {
     margin-left: 3px;
 }
 
+#search1 {
+    margin-left: 10px;
+}
+
 /* Footer */
 
 .footer {
@@ -180,13 +184,27 @@ html {
     margin-top: 30px;
 }
 
+#post_titel h3 {
+
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    background-color: rgb(155, 110, 59);
+    color: #f5f1f1;
+}
+
+#post_titel h3:hover {
+    background-color: #f5f1f1;
+    color: #6a5124;
+}
+
 #User_postCateg {
     position: absolute;
     top: 10%;
-    min-width: 15%;
+    max-width: 30%;
     text-align: center;
-    left: 20px;
-    max-height: 20px;
+    left: -50px;
+    max-height: 60px;
     color: #f5f1f1;
     background-color: rgb(155, 110, 59);
 }

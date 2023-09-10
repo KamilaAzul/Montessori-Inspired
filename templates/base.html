@@ -91,7 +91,7 @@
             </ul>
             {% endif %}
 
-            <form class="d-flex" method="get" action="{% url 'search' %}">
+            <form class="d-flex" id="search1" method="get" action="{% url 'search' %}">
                 {% csrf_token %}
             
                 <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
