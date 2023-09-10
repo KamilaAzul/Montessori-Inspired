@@ -76,11 +76,16 @@ html {
     padding-top: 20px;
 }
 
-.image-container {
+post_img1 {
 
-    width: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    padding-left: 20px;
+    margin-top: 10px;
 
 }
+
+
 
 .content-box {
     -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
@@ -94,6 +99,12 @@ html {
 .content-description p {
     margin-top: 10px;
     height: 40px;
+}
+
+/*edit comment page*/
+
+#edit-comments {
+    margin-top: 90px;
 }
 
 /*post page*/

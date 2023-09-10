@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .models import Post, UserProfile, Comment
+from .models import Post, UserProfile, Comment, Category
 from django.utils.text import slugify
 from django.contrib import messages
 from django.db.models import Q
@@ -123,6 +123,12 @@ def categories_view(request, categ):
         "categories_post.html",
         {"categ": categ.title(), 'categories_posts': categories_posts},
     )
+
+
+class AddCategoriesView(CreateView):
+    model = Category
+    template_name = "categories_post.html"
+    fields = ('title',)
 
 
 def search(request):

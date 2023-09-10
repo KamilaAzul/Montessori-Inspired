@@ -9,7 +9,7 @@ urlpatterns = [
     path('delete_comment/<int:comment_id>', views.delete_comment,
          name='delete_comment'),
     path("about", views.about, name="about"),
-    path('categories', views.categories, name="categories"),
+    path('categories', views.AddCategoriesView.as_view(), name="categories"),
     path('categories_posts<str:categ>', views.categories_view,
          name="categories_posts"),
     path('blog', views.AllBlogPost.as_view(), name='blog'),

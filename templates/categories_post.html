@@ -57,16 +57,16 @@
                     </div>
                     <div class="row">
                         {% endif %}
-                        {% endfor %}
+                        {% endif %}
                     </div>
-                    {% else %}
+                    {% empty%}
                     <div class="col-md-12 mt-3 mb-5 no-post-msg">
                         <h2 class="text-center">Ohh, Looks like there are no posts in this categories yet...
                         </h2>
                     </div>
                 </div>
             </div>
-            {% endif %}
+            {% endfor %}
             {% if is_paginated %}
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
@@ -79,6 +79,7 @@
                     {% endif %}
                 </ul>
             </nav>
+            {% endif%}
             {% endif%}
         </div>
 </section>
