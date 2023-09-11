@@ -14,26 +14,27 @@
     <div class="col-12 mt-3 left ">
       <div class="row ">
         {% for post in post_list %}
-        <div class="col-md-4 " >
+        <div class="col-md-4 ">
           <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
-            <div class="card-body">
+            <div class="card-body" >
                 <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
-              <div class="image-container" >
+              <div class="image-container" id="Image_blog_box" >
                 {% if "placeholder" in post.featured_image.url %}
               
                 <div class="content-box bg-linear-gradient">
                     
-                    <div class="content-img" >  
+                    <div class="content-imgPhoto" >  
                 <img
                   class="card-img-top"
                   src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
+                  style="max-height: 100%; max-width: 100%; object-fit: contain "
                 />
                 {% else %}
                 <div id="post_img1">
                 <img
                   class="card-img-top"
                 src="{{ post.featured_image.url }}"
-                 style="max-height: 90%; max-width: 90%; object-fit: contain "
+                 style="max-height: 100%; max-width: 100%; object-fit: contain "
                   alt="{{ result }} Image"/>
                 {% endif %}
                 </div>

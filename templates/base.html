@@ -95,12 +95,11 @@
             </ul>
             {% endif %}
 
-            <form class="d-flex" id="search1" method="get" action="{% url 'search' %}">
-                {% csrf_token %}
-            
-                <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline btn-signup me-3" type="submit">Search</button>
-            </form>
+<form class="d-flex" id="search_boxNav" method="get" action="{% url 'search' %}">
+    <input class="form-control me-2" name="q" type="search" placeholder="Search Post" aria-label="Search">
+    <button class="btn btn-outline btn-signup me-3" id="search1" type="submit">Search</button>
+</form>
+    
         </div>
       </div>
     </nav>
