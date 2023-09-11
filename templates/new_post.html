@@ -1,13 +1,15 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %} {% if
-user.is_authenticated %}
+user.is_authenticated %} {% include "components/hero_small.html" %}
 
 <!-- Add new post section-->
 <div id="addNewPost">
   <div class="container box-shadow">
     <div class="row">
-      <h2 class="mt-3 text-center">Welcome <span>{{ user }}</span></h2>
+      <h2 class="mt-3 text-center font-monospace">
+        Welcome <span>{{ user }}</span>
+      </h2>
 
-      <h4 class="mt-2 text-center">Leave your new post:</h4>
+      <h4 class="mt-2 text-center font-monospace">Leave your new post:</h4>
       {% if submitted %}
       <!-- success alert -->
       <h2>Thank you! Your post was submitted successfully!</h2>

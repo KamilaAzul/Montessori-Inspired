@@ -76,16 +76,6 @@ html {
     padding-top: 20px;
 }
 
-post_img1 {
-
-    max-width: 200px;
-    max-height: 200px;
-    padding-left: 20px;
-    margin-top: 10px;
-
-}
-
-
 
 .content-box {
     -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
@@ -104,13 +94,19 @@ post_img1 {
 /*edit comment page*/
 
 #edit-comments {
-    margin-top: 90px;
+    margin-top: 120px;
+}
+
+#edit-comments button {
+
+    margin-top: 15px;
 }
 
 /*post page*/
 
 #post-content {
     padding-top: 20px;
+    background-color: #f1e6e4;
 }
 
 #post_text {
@@ -127,8 +123,28 @@ post_img1 {
 }
 
 #post-content-img {
-    padding-top: 50px;
 
+    padding-top: 50px;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+#Post_photo_container {
+    margin-top: 20px;
+    max-width: 700px;
+    max-height: 900px;
+}
+
+#post_comment_section {
+    background-color: #f5e1c9;
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+
+#edit_delete_buttons {
+    margin-top: -20px;
+    padding-bottom: 40px;
 }
 
 #bookclateg {
@@ -192,7 +208,7 @@ post_img1 {
 
 /* user post page*/
 #user-posts {
-    margin-top: 30px;
+    margin-top: 110px;
 }
 
 #post_titel h3 {
@@ -237,8 +253,8 @@ post_img1 {
 /*New Post Page*/
 
 #addNewPost .container {
-    padding-top: 50px;
-    margin-top: 70px;
+    padding-top: 30px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 

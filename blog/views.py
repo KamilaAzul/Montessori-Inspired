@@ -186,7 +186,8 @@ def update_post(request, slug):
                 form.save()
                 messages.success(
                     request, "Your post was updated successfully!")
-                return redirect(reverse("user-posts"))
+                return HttpResponseRedirect(reverse(
+                    'post_detail'))
             else:
                 messages.error(request, "Failed to update the post.")
         else:

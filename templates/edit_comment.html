@@ -7,7 +7,7 @@
 <div class="container box-shadow" id="edit-comments">
   <div class="row">
     <div class="col-12 text-center">
-      <h2 class="mt-3">Edit Comment</h2>
+      <h2 class="mt-3 font-monospace">Edit Comment</h2>
       <h4 class="mb-4">
 
         <p>Hello:
@@ -17,7 +17,7 @@
 
     {% csrf_token %}
     {{ form | crispy }}
-            <button class="btn btn-secondary right mb-4" type="submit" value="Save">Submit</button>
+            <button class="mx-2  btn btn-signup btn-lg" type="submit" value="Save">Submit</button>
         </form>
       </form>
     </div>

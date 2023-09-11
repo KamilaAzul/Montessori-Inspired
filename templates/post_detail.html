@@ -5,7 +5,7 @@
 
 <section id="post-content">
 <div class="row featurette p-5 container-fluid">
-    <div class="col-md-5 text-center">
+    <div class="col-md-5 text-center" id="Post_photo_container">
         {% if "placeholder" in post.featured_image.url %}
         <img
           class="post-img"
@@ -74,7 +74,7 @@
     </div>
     <!-- Only visible to the author of the post-->
     {% if user.id == post.author.id %}
-    <div class="row" >
+    <div class="row"  id="edit_delete_buttons" >
         <div class="d-flex justify-content-center">
             <a href="{% url 'update-post' post.slug  %}" id="update-post-button" role="button" class="mx-2  btn btn-signup btn-lg"><strong>Edit
                     Post</strong> </a>
@@ -86,7 +86,7 @@
 
 </section>
 
-<section style="background-color: #f5e1c9;">
+<section id="post_comment_section">
     <div class="container my-5 py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 col-lg-10">
@@ -115,13 +115,16 @@
             <!-- The body of the comment goes before the | -->
             {{ comment.body | linebreaks }}
             <!-- Only visible to the user who write this comment-->
+            
             {% if user.is_authenticated and user.username == comment.name %}
             <div class="row">
                 <div class="d-flex">
                     <a href="{% url 'edit_comment' comment.id  %}" role="button"
-                        class="btn btn-secondary btn-sm mx-2"><strong>Edit</strong> </a>
-                    <button type="button" class="btn-delete btn-sm btn-danger" data-bs-toggle="modal"
+                        class="mx-2  btn btn-signup btn-lg"><strong>Edit</strong> </a>
+
+                    <button type="button" class="mx-1  btn btn-signup btn-lg" data-bs-toggle="modal"
                         data-bs-target="#delete-comment">Delete</button>
+                        
                     <!-- Delete comment bootstrap modal-->
                     <div class="modal fade" id="delete-comment" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog">
@@ -140,6 +143,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>{% endif %}
             <hr>
           </div>
