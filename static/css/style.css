@@ -229,7 +229,29 @@ html {
 #profile_container{
 
     margin-top: 90px;
+    background-color: #F4DDD8;
 }
+
+#Profile_infotext{
+
+    padding-bottom: 20px;
+}
+
+#profileIMG{
+
+    padding-top: 50px;
+
+}
+
+#profile_info{
+    padding-top: 50px; 
+
+}
+#profile_button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /*Update Post Page*/
 
 #updatePostPage {

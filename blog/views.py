@@ -206,6 +206,8 @@ def create_post(request):
             new_post = form.save(commit=False)
             new_post.author = request.user
             new_post.save()
+            messages.success(
+                    request, "Your post was created successfully and it's waiting for approval!")
 
             return redirect('blog')
 

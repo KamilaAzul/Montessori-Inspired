@@ -18,49 +18,49 @@
           <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
             <div class="card-body" >
                 <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
-              <div class="image-container" id="Image_blog_box" >
+
+            <div class="image-container" id="Image_blog_box" >
                 {% if "placeholder" in post.featured_image.url %}
               
                 <div class="content-box bg-linear-gradient">
                     
                     <div class="content-imgPhoto" >  
-                <img
-                  class="card-img-top"
-                  src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
-                  style="max-height: 1000%; max-width:10000%; object-fit: contain "
-                />
-                {% else %}
-                <div id="post_img1">
-                <img
-                  class="card-img-top"
-                src="{{ post.featured_image.url }}"
-                 style="max-height: 1000%; max-width:10000%; object-fit: contain "
-                  alt="{{ result }} Image"/>
-                {% endif %}
-                </div>
+                         <img
+                           class="card-img-top"
+                           src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
+                            style="max-height: 1000%; max-width:10000%; object-fit: contain "
+                             />
+                           {% else %}
+                           <div id="post_img1">
+                           <img
+                           class="card-img-top"
+                           src="{{ post.featured_image.url }}"
+                           style="max-height: 1000%; max-width:10000%; object-fit: contain "
+                            alt="{{ result }} Image"/>
+                            {% endif %}
+                           </div>
                    
-                <div class="content-img">
-                  <p class="categorie ">{% for categ in post.categories.all %}
-                <h4><i class="fa fa-book"></i>{{ categ }}</h4>
-                {% endfor %}</p>
-                
-                </div>
-              </div>
-        </a>
-                <div class="content-description">
-              <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                <h2 class="card-title">{{ post.title }}</h2>
-                <p class="card-text">{{ post.excerpt }}</p>
-              </a>
-                </div>
-                <div class="card-text">
+                           <div class="content-img">
+                            <p class="categorie ">{% for categ in post.categories.all %}
+                            <h4><i class="fa fa-book"></i>{{ categ }}</h4>
+                             {% endfor %}</p>
+                            </div>
+                    </div>
+                      </a>
+                    <div class="content-description">
+                     <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                     <h2 class="card-title">{{ post.title }}</h2>
+                     <p class="card-text">{{ post.excerpt }}</p>
+                      </a>
+                    </div>
+                     <div class="card-text">
                     {{ post.content | slice:":250" | safe }}...
-                </div>
-              <hr />
-              <p class="card-text text-muted h6">Created by:
-                <span>{{ post.author }} | </span>
-                {{ post.created_on}} <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-              </p>
+                    </div>
+                    <hr />
+                    <p class="card-text text-muted h6">Created by:
+                    <span>{{ post.author }} | </span>
+                     {{ post.created_on}} <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                    </p>
             </div>
           </div>
         </div>
