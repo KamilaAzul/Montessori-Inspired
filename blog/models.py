@@ -97,6 +97,9 @@ class UserProfile(models.Model):
     presentation = models.TextField(max_length=500)
     image = CloudinaryField('image', default='default_image')
 
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
 
 class Author(models.Model):
     """

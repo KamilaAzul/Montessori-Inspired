@@ -8,7 +8,7 @@
  <a href="{% url 'new_post' %}">
   <button class="mx-2  btn btn-signup btn-lg" id="Add_new_post">Add a new post</button>
                    
-       <div class="container-fluid ">
+       <div class="container-fluid " >
         <div class="row">
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3 left ">
@@ -27,14 +27,14 @@
                 <img
                   class="card-img-top"
                   src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
-                  style="max-height: 100%; max-width: 100%; object-fit: contain "
+                  style="max-height: 1000%; max-width:10000%; object-fit: contain "
                 />
                 {% else %}
                 <div id="post_img1">
                 <img
                   class="card-img-top"
                 src="{{ post.featured_image.url }}"
-                 style="max-height: 100%; max-width: 100%; object-fit: contain "
+                 style="max-height: 1000%; max-width:10000%; object-fit: contain "
                   alt="{{ result }} Image"/>
                 {% endif %}
                 </div>

@@ -117,12 +117,8 @@ def categories_view(request, categ):
     """
     categories_posts = Post.objects.filter(
         categories__title__contains=categ, status=1)
-
-    return render(
-        request,
-        "categories_post.html",
-        {"categ": categ.title(), 'categories_posts': categories_posts},
-    )
+    return render(request, 'categories_posts.html', {
+        'categ': categ.title(), 'categories_posts': categories_posts})
 
 
 class AddCategoriesView(CreateView):
@@ -262,3 +258,24 @@ def delete_comment(request, comment_id):
     messages.success(request, 'The comment was deleted successfully')
     return HttpResponseRedirect(reverse(
         'post_detail', args=[comment.post.slug]))
+
+
+class UserProfile(generic.TemplateView):
+    """
+    This class creates a context with all objects from the UserProfile
+    model.
+    """
+
+    model = UserProfile
+    context_object_name = 'user'
+    template_name = 'user_profile.html'
+
+    def get_context_data(self, **kwargs):
+        """
+        Help method to filter out all objects from the UserProfile
+        model.
+        """
+
+        context = super().get_context_data(**kwargs)
+        context['profile'] = UserProfile.objects.all()
+        return context
