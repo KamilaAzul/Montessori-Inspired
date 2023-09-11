@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
-    path('user_profile', views.UserProfile.as_view(), name='user-profile'),
+    path('user_profile', views.Profile.as_view(), name='profile'),
     path('edit_comment/<int:pk>', views.EditComment.as_view(),
          name='edit_comment'),
     path('delete_comment/<int:comment_id>', views.delete_comment,

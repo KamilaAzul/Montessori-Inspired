@@ -224,7 +224,12 @@ html {
 .DownButton {
     background-color: rgb(155, 110, 59);
 }
+/* User Profile Page*/
 
+#profile_container{
+
+    margin-top: 90px;
+}
 /*Update Post Page*/
 
 #updatePostPage {

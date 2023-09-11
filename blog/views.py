@@ -260,7 +260,7 @@ def delete_comment(request, comment_id):
         'post_detail', args=[comment.post.slug]))
 
 
-class UserProfile(generic.TemplateView):
+class Profile(generic.TemplateView):
     """
     This class creates a context with all objects from the UserProfile
     model.

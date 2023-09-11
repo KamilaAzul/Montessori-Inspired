@@ -6,29 +6,27 @@
     <div class="row">
       <div class="col-8 offset-2 mt-4 text-center font-monospace">
         <h2>Welcome <span>{{user.username}}</span></h2>
+        <h3>Would you like to   <a href="{% url 'new_post' %}">
+            <button class="mx-2  btn btn-signup btn-lg" id="Add_new_post">Add a new post</button></a></h3>
         <h4 class="mt-3 p-2">Have a look at your posts:</h4>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row g-0">
-      <div class="col-md-10 mx-auto p-md-3">
-        <div class="row">
-          <!-- if the user have added post-->
-          {% if post_list|length > 0 %}
-          <!-- loops through the posts have been posted by the logged in user -->
-          {% for post in post_list %}
-          <div class="col-md-10 offset-md-1 text-center my-3">
-            <div class="card mb-4">
-              <div class="card-body">
-                <a
-                  href="{% url 'post_detail' post.slug %}"
-                  class="post-link"
-                  aria-label="Go to the post detail page"
-                >
-                  <div class="image-container">
-                    <!-- The featured image URL or an alternative if one isnt provided -->
-                    {% if "placeholder" in post.featured_image.url %}
+  <div class="container-fluid " >
+    <div class="row">
+<!-- Blog Entries Column -->
+<div class="col-12 mt-3 left ">
+  <div class="row ">
+    {% if post_list|length > 0 %}
+    {% for post in post_list %}
+    <div class="col-md-4 ">
+      <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
+
+        <div class="card-body" >
+            <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
+          <div class="image-container" id="Image_userPost_box" >
+             <!-- The featured image URL or an alternative if one isnt provided -->
+            {% if "placeholder" in post.featured_image.url %}
                     <img
                       class="card-img"
                       src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693395728/pexels-antoni-shkraba-6219059_mf4uoa.png"
@@ -64,7 +62,9 @@
               </div>
             </div>
           </div>
-        <hr />
+            </div>
+        </div>
+       
           {% endfor %}
           <!-- if the user have NOT shared any post, the Create New button below will display -->
           {% else %}
