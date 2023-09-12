@@ -106,10 +106,8 @@ All functionality and development of this project were managed using GitHub whic
 ### Site User
 |  | | |
 |:-------:|:--------|:--------|
-| As a Site User |  I can immediately understand the purpose of the site so that I can decide if it meets my  
-    needs. | &check; |
-| As a Site User |  I can intuitively navigate around the site so that I can find content and 
-    understand where I am on the site | &check; |
+| As a Site User |  I can immediately understand the purpose of the site so that I can decide if it meets my needs. | &check; |
+| As a Site User |  I can intuitively navigate around the site so that I can find content and understand where I am on the site | &check; |
 | As a Site User | I can see a list of posts so that I can select the one that I want to read. | &check; |
 | As a Site User | I can click on a post and read the full content. | &check; |
 | As a Site User | I can see the number of likes on every post so that I can see which is the most popular or viral | &check; |
@@ -133,7 +131,6 @@ All functionality and development of this project were managed using GitHub whic
 ### As a website Admin:
 |  | | |
 |:-------:|:--------|:--------|
-
 | As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
 | As a Site Admin | I can create, read, update, and delete posts so that I can manage my blog content | &check; |
 | As a Site Admin | I can approve posts so that I can secure good quality of the content | &check; |
@@ -143,117 +140,464 @@ All functionality and development of this project were managed using GitHub whic
 
 [Back to top](<#table-of-content>)
 
-#site-structure
 
-#design-choices
 
-#colours
+### User Experience (UX)
+
+
+    * [Wireframes](<#wireframes>)
+TThe Wireframes were created by me by hand. Drawing gives me more flexibility and is for me more comfortable.
+
+
+### Site-structure
+
+
+The Montessori Inspired site gives different options, depending if a user is logged in or logged out.
+Depending on login status different pages are available for the user. When the user is logged out the pages: *home page*, *about*, *blog*, *search page* are available.
+When the user is logged in, he can use the above-mentioned websites but has additional new options: *my posts* and *add post* and *profile page* are available.
+As I mentioned before the site is a minimalistic, clean, and intuitive design that makes the site easy to navigate for the user.
+
+
+[Back to top](<#contents>)
+
+
+### Database-diagram
+
+
+I used Canva to create a database schema to visualize the types of custom models needed for the project.
+I used it as a guide to what needed to be added to each model.
+The relationship between Post, Author, Category, User Profile, and Comment are shown in this diagram.
+
+
+* **Category** - Handles categories.
+* **Post** - Handles all the reviews.
+* **Comment** - Handles all the comments.
+***Author**- Handel's info about the author.
+* **UserProfile** - Handles the user profile information (first name, last name, presentation, and featured image for the specific user/reviewer).
+
+
+![ER Diagram]()
+
+
+[Back to top](<#contents>)
+
+
+### Design
+
+
+The site has a very simple and minimalistic design which was chosen by me on purpose. Users can move on the page very intuitively and easily find the content that they are searching for. I wanted to bring a sense of calm when the user is visiting the website.
+
 
 ![Colours Palete](./assets/readme/extras/tasty_blog_colors_palete.png)<br>
 
-- The color scheme is kept simple by opting for a combination of white text set against the image background and black text against the white background. For the navbar was set as a white background color that changes when the user scrolls. For a linear gradient, 3 colours were used dark blue, orange, and purple. This gradient is also used as a search box background. To highlight the icons an interactive color set of light blue was used.
 
-#typography
+#### Colours
+Colour palette from Coolors
 
-- The Lato font is used as the main font for the whole project and the Kaushan font is used to
-display the word enjoy in the Post Details and About pages.
 
-#imagery
+![Colour Palette](file:///workspaces/Montessori-Inspired/static/ReadMeFilePhotos/page%20colors.png)
+
+
+The selected colors are warm and natural, which is related to the Montessori philosophy, where users mainly use natural wooden materials as toys, tools, or interior decoration. The colors are supposed to refer to this.
+ 
+The colors of the website are mainly cream, light pink, light gray and brown. The colors chosen are quite neutral and calming.
+
+
+I also wanted to ensure there was good contrast between the background colors and text at all times to ensure the user felt comfortable while navigating the site.
+
+
+[Back to top](<#contents>)
+
+
+### Typography
+
+
+The fonts used for the site are 'Roboto' and 'Lato'.
+
+
+* 'Roboto' is a very clean font that works really well, it's easy to read and matches the minimalistic style that I wanted the site to 'breath'.
+
+
+* 'Lato' has a nice design and works really well for longer paragraphs of text.
+
+
+* 'font-monospace' -to change a selection of particular text.
+
+
+[Back to top](<#contents>)
+
+
+## Imagery
+
 
 - All the images are related to Montessori philosophy and the website design.
 Only 7 images are static.
 All other images will be uploaded by the authors to the database.
 
+
 #database-diagram
+
 
 ## Features
 #existing-features
 
-### **Home Page**
-#home-page
+
+## **Home Page**
+
 
 ![Home Page](photo to upload)
 
-- The hero image related to Montessori education should welcome the user and gives a short message explaining what the website is about.
+
+The home page gives a short message explaining what the website is about and what the Montessori philosophy is.
+The hero section contains scrolling imagees,wich are related to Montessori education. Changin photos add dynamics and encourage the user to learn more about the blog's topic. There is a button in the photo that takes the user to the blog page.
+
+
+[Back to top](<#contents>)
+
 
 ### **Navigation**
-The navigation bar is very clean and straight forward and easy to use.
+The navigation bar is very clean and straight forward and easy to use. Iis present at the top of every page and navigates all links to the respective pages.
+The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
 
-*Links that are visible to the user: *
+
+*Links that are visible to not loged-in user:*
+
 
 * About - Includes information about Monessori Inspired.
-* Categories - Shows all categories of posts.
 * Blog - Lists of all posts.
 * Login / Sign Up - Gives the user the opportunity to log in or sign up if not ready a registered user at Review | Alliance.
 * Search Box - allowes the user to search of particular content.
 
+
+*Links that are visible to loged-in user:*
+
+
+* My space- after collapsing will allows user to got to: the users profile, users posts or add a new post.
+
+
+[Back to top](<#contents>)
+
+
+![Navbar](assets/features/navbar.jpg)
+
+
+![Navbar](assets/features/nav-hamburger.jpg)
+
+
+## Navbar after loged in user
+
+
+* If the user is logged in (username Mahi is provided as an example here), navbar will be shown with user name and logout options. On a desktop, the navigation menu will appear as shown below:
+
+
+![logged-in-user-Navbar](assets/features/logged-in-user-navbar.jpg)
+
+
 ### **About**
+
 
 The About Page gives, users information about the author and and it makes an introduction  to the website. It explains as well the main purpose of the blog.<br>
 
+
 <details><summary><b>About Section</b></summary>
+
 
 ![About](readme/assets/images/about.png)
 </details><br/>
 
 
+
+
 ### **Blog Page**
+
+
 
 
 ![Blog Page]
 
-- On the Blog Page, users have access to all posts available on the website.
-The user can choose which post to read by clicking on the post card.<br>
 
-### **Post-detail-page**
+* On the Blog Page, users have access to all posts available on the website.
+The user can choose which post to read by clicking on the post card.
+The blog posts is paginated in a way that 9 posts are displayed. Further post can be accessed by clicking next button. Each blog post shows the image related to the post content. The user can see the post title with specific fields and sliced post content along with the name of author, submitted date and shows the number of likes and comment icon.
 
-### **Categories Page**
 
-* On the Categories Page, users can see the categories available in the blog and filter the posts by category.
+![Blog Page](assets/features/blog-page1.jpg)
 
-### **Categories Results**
 
-* On the Categories Results Page, users can access the post filtered by the chosen category.
+## Post-detail-page
+
+
+![Post Detail Page - Top](./)
+
+
+* On the top of the Post Detail Page, users can see the post's main
+image and they can also have access to information about the post like category,  author name, posted date, and the
+option to like/unlike the post. It will also show how many likes and
+comments the post has received.<br>
+The author of posts/ comments will have the option to edit or delete them.
+
+
+## Edit Comments Page
+
+
+![Edit Comments Page](./assets/readme/features/tasty_blog_edit_comments_page.jpg)
+
+
+* On this page, users are allowed to edit their own comments. The website superuser can
+  delete or update any comments on the blog without having to access the admin panel.
+
+
+
 
 ### **Search Results Page**
 
-* On the Search Results Page, users can see the posts found by their search.  When their post is found, the user can go to the 
+
+* After entering the word that the user is looking for, the person will be redirected to the search results page.
+On the Search Results Page, users can see the posts found by their search.  When their post is found, the user can go to the
   Post Details Page by clicking on the card result.
+* If there are No Results Found, users will see the message informing them about this
 
-    ###Search Results - No Results Found
 
-* On the Search Results Page - No Results Found, users will see this message if there is nothing found for the search.
+## Signup Page
 
-### **Signup Page](#signup-page)
-### **Login Page](#login-page)
-### **Logout Page](#logout-page)
-### **User Profile Page](#user-profile-page)
-### **Profile Update](#profile-update)
-### ** New Post 
-### **Navbar](#navbar)
-### **Footer](<#footer>)
+
+* If the site visitor has no registered yet, they can sign upThe user is asked to enter a username and password to sign up.
+If the username exists or the password is too small the user will be guided by validation messages which were created by modifying Django inbuilt templates.
+
+
+## Login Page
+
+
+* On the Login Page, the users can log in to the website by placing the username and password. After that, they have access
+  to website services registered  for a user.
+
+
+## Logout Page
+
+
+* On this page, the users can confirm that they wish to exit the website.
+
+
+## User Profile Page
+
+
+
+
+![User Profile Page](./assets)
+
+
+* On the Profile Page, users have access to their own information and can update their user name, email and profile image.
+
+
+### ** New Post
+## Navbar
+
+
+## Footer
+
+
+![header](docs/readme_images/features/footer.png)
+
+
+* The footer is simple and estetic. In this section user can find links to Facebook, Instagram and Youtube.
+  Clicking the links in the footer opens a separate browser.
+
+
 ### **Like Post](#like-post)
 ### **Unlike Post](#unlike-post)
 ### **Comment Post](#comment-post)
 ### **Delete/Edit Comment](#deleteedit-comment)
-### **Delete Comment - 1](#delete-comment---1)
-### **Delete Comment - 2](#delete-comment---2)
 ### **Edit Comment](#edit-comment)
  
 
-* [**Technologies Used**](<#technologies-used>)
-    * [Languages](<#languages>)
-    * [Frameworks & Software](<#frameworks--software>)
-    * [Libraries](<#libraries>)
-    *  [Django Packages](#django-packages)
+
+## Technologies Used
 
 
-* [**Testing**](<#testing>)
+### Languages Used
+
+
+* [HTML 5](https://en.wikipedia.org/wiki/HTML/)- Used to structure all the templates on the site
+* [CSS 3](https://en.wikipedia.org/wiki/CSS)- to provide extra styling to the site
+* [JavaScript](https://www.javascript.com/)- Minimum javascript was used to fade out alerts after a few seconds.
+* [Python](https://www.python.org/)- To provide the functionality to the site. Packages used in the project can be found in requirements.txt
+
+
+### Django Packages
+
+
+* [Gunicorn](https://gunicorn.org/)- As the server for Heroku.
+* [Cloudinary](https://cloudinary.com/)- Was used to host the static files and media for the site.
+* [Dj_database_url](https://pypi.org/project/dj-database-url/)- To parse the database URL from the environment variables in Heroku.
+* [Summernote](https://summernote.org/)- As a text editor.
+* [Psycopg2](https://pypi.org/project/psycopg2/)- As an adaptor for Python and PostgreSQL databases.
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)- To style the forms.
+* [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)- For authentication, registration, account management.
+
+
+
+
+### Frameworks - Libraries - Programs Used
+
+
+* [Django](https://www.djangoproject.com/) was used as the framework for the back-end logic of the project. Django enables rapid and secure development.
+* [GitHub](https://github.com/)- Used to store the project's code after being pushed from Git.
+* [Heroku](https://id.heroku.com)- Used to deploy the live project.
+* [Bootstrap](https://getbootstrap.com/)- Used to style the website, add responsiveness and interactivity.
+* [Git](https://git-scm.com/)- Used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
+* [PostgreSQL](https://www.postgresql.org/)- Database used through heroku.
+* [Google Fonts:](https://fonts.google.com/) used for the Roboto font
+* [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to inspect page elements, debug, troubleshoot and test features and adjust property values. Using the Lighthouse extension installed in Chrome Browser, the performance report was generated.
+
+
+## Testing
+
+
+### Validation
+I used the following validation tools to validate HTML, CSS, PYTHON codes. Below the link of TESTING.md file, which includes all validation results.  
+- HTML using [W3C HTML validator](https://validator.w3.org/)
+- CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
+- Python via [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/)
+
+
+### Manual Testing
+Testing has taken place continuously throughout the development of the project. Each view was tested regularly.
+
+
     * [Testing User Stories](<#testing-user-stories>)
     * [Code Validation](<#code-validation>)
     * [Additional Testing](<#additional-testing>)
     * [Known Bugs](<#known-bugs>)
-* [Deployment](<#deployment>)
-* [Credits](<#credits>)
-* [Acknowledgements](<#acknowledgements>)
+
+
+[Back to top](<#contents>)
+
+
+## Deployment
+
+
+### 1. Creating the Django Project
+* Go to the Code Institute Gitpod Full Template [Template](https://github.com/Code-Institute-Org/gitpod-full-template).
+* Click on `Use This Template` button, then create new repository.
+* Name our repository and click on `Create repository from template` button.
+* Once the template is available in your repository click on `Gitpod` button.
+* When the image for the template and the Gitpod are ready, open a new terminal to start a new Django App.
+* Install Django and gunicorn: `pip3 install 'django<4' gunicorn`.
+* Install supporting database libraries dj_database_url and psycopg2 library: `pip3 install dj_database_url==0.5.0 psycopg2`.
+* Install Cloudinary libraries to manage static files: `pip install dj-3-cloudinary-storage`.
+* Create file for requirements: `pip freeze --local > requirements.txt`.
+* Create project:`django-admin startproject project_name .`.
+* Create app: `python manage.py startapp app_name`.
+* Add app to list of `installed apps` in settings.py file: `'app_name'`.
+* Migrate changes: `python manage.py migrate`.
+* Test server works locally: `python manage.py runserver`.
+* If the app has been installed correctly the window will display- The install worked successfully! Congratulations!
+
+
+### 2. Create your Heroku app
+* Navigate to [Heroku](https://id.heroku.com).
+* Create a Heroku account by entering your email address and a password (or login if you have one already).
+* Activate the account through the authentication email sent to your email account.
+* Click the **new button** on the top right corner of the screen and select create a new app from the dropdown menu.
+* Enter a unique name for the application.
+* Select the appropriate region for the application.
+* Click create app.
+* Click Reveal Config Vars and add a new record with `DATABASE_URL`.
+* Click Reveal Config Vars and add a new record with `PORT`.
+* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`(note: this must be either removed or set to 0 for final deployment).
+* Next, scroll down to the Buildpack section, click `Add Buildpack` select python and click Save Changes.
+
+
+### 3. Set up Environment Variables
+* In you IDE create a new env.py file in the top level directory.
+* Add env.py to the .gitignore file.
+* In env.py import the os library.
+* In env.py add `os.environ["DATABASE_URL"]` = "Paste the link copied from Heroku DATABASE_URL".
+* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"`.
+* In Heroku Settings tab Config Vars enter the same `SECRET_KEY` created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
+
+
+### 4. Setting up settings.py
+* In your Django 'settings.py' file type:
+
+
+ ```
+ from pathlib import Path
+ import os
+ import dj_database_url
+
+
+ if os.path.isfile("env.py"):
+  import env
+ ```
+* Remove the default insecure secret key in settings.py and replace with the link to the secret key variable in Heroku by typing: `SECRET_KEY = os.environ.get(SECRET_KEY)`
+* Comment out the `DATABASES` section in settings.py and replace with:
+```
+DATABASES = {
+  'default':
+  dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }`
+```
+* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: `os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"`
+* In Heroku, click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
+* Add Cloudinary libraries to the installed apps section of settings.py file:
+ ```
+ 'cloudinary_storage'
+ 'django.contrib.staticfiles''
+ 'cloudinary'
+ ```
+* Connect Cloudinary to the Django app in `settings.py`:
+```
+STATIC_URL = '/static'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'STATIC')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE =
+'cloudinary_storage.storage.MediaCloudinaryStorage'
+* Link file to the templates directory in Heroku
+* Place under the BASE_DIR: TEMPLATES_DIR = os.path.join(BASE_DIR,
+'templates')
+```
+* Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: `'DIRS': [TEMPLATES_DIR]`
+* Add Heroku Hostname to ALLOWED_HOSTS:
+```ALLOWED_HOSTS = ['<Heroku_app_name>.herokuapp.com', 'localhost']```
+* Create Procfile at the top level of the file structure and insert the following:
+    ``` web: gunicorn PROJECT_NAME.wsgi ```
+
+
+* Commit and push the code to the GitHub Repository.
+
+
+### 5. Heroku Deployment:
+* Click Deploy tab in Heroku.
+* Select Github as the deployment method.
+* Confirm you want to connect to GitHub.
+* Search for the repository name and click the connect button to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository.
+* Scroll to the bottom of the deploy page and select the preferred deployment type.
+* Click either Enable Automatic Deploys for automatic deployment when you push updates to Github or To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
+
+
+### 6. Final Deployment
+In the IDE:
+* When development is complete change the debug setting to: `DEBUG = False` in `settings.py`
+* In Heroku settings config vars change the `DISABLE_COLLECTSTATIC` value to 0
+* Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku.
+* To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
+
+
+
+
+[Back to top](<#contents>)
+
+
+## Acknowledgements
+
+
+The website was completed as a Portfolio Project 1 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
+
+
+I would like to thank all at the Code Institute for their help and support.
+
 
