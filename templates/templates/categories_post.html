@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="categories-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2 mt-4 text-center">
+                <h2>Categories: <span>{{ categ }}</span></h2> 
+            </div>
+        </div>
+    {% if categories_posts %}
+   
+        <div class="container">
+            <h4 class="text-center">Have a look at all posts related to your choice: {{ categ }}</h4>
+            <hr>
+            <div class="row">
+                <div class="col-12 mt-3 left">
+                    <div class="row">
+                        {% for post in categories_posts %}
+                        {% if forloop.counter == 2%}
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a href="{% url 'post_detail' post.slug %}" class="post-link"
+                                        aria-label="Go to the post detail page">
+                                        <div class="image-container">
+                                            <!-- The featured image URL or an alternative if one isnt provided -->
+                                            {% if "placeholder" in post.featured_image.url %}
+                                            <img class="card-img" src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692880316/pexels-arina-krasnikova-5119837_qgqrhr.jpg" width="100%">
+                                            {% else %}
+                                            <img src=" {{ post.featured_image.url }}" class="card-img-top"
+                                                alt="{{ post.title }} image">
+                                            {% endif %}
+                                            <div class="card-img-overlay text-center">
+                                                {% for categ in categories.all %}
+                                                <h4 class="des-heading">{{ des }}</h4>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <h3 class="card-title mt-2 text-center">{{ post.title }}</h3>
+                                    </a>
+
+                                    <hr>
+                                    <div class="card-text">
+                                        {{ post.content | slice:":280" | safe }}...
+                                    </div>
+                                    <div class="card-footer">
+                                        <span>Author: {{ post.author }} | </span>
+                                        <span>{{ post.created_on}} | </span>
+                                        <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                        <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    <div class="row">
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                    {% empty%}
+                    <div class="col-md-12 mt-3 mb-5 no-post-msg">
+                        <h2 class="text-center">Ohh, Looks like there are no posts in this categories yet...
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link my-3">&laquo; PREV </a>
+                    </li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link my-3"> NEXT &raquo;</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif%}
+            {% endif%}
+        </div>
+</section>
+{% endblock content %}

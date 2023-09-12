@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+
+
+<section id="blog-page">
+<div id="intro" class="p-5 text-center bg-light">
+    <h1 class="mb-3 h2 font-monospace">Welcome to the Montessori Inspired blog page</h1>
+
+ <a href="{% url 'new_post' %}">
+  <button class="mx-2  btn btn-signup btn-lg" id="Add_new_post">Add a new post</button>
+                   
+       <div class="container-fluid " >
+        <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 left ">
+      <div class="row ">
+        {% for post in post_list %}
+        <div class="col-md-4 ">
+          <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
+            <div class="card-body" >
+                <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
+
+            <div class="image-container" id="Image_blog_box" >
+                {% if "placeholder" in post.featured_image.url %}
+              
+                <div class="content-box bg-linear-gradient">
+                    
+                    <div class="content-imgPhoto" >  
+                         <img
+                           class="card-img-top"
+                           src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
+                            style="max-height: 1000%; max-width:10000%; object-fit: contain "
+                             />
+                           {% else %}
+                           <div id="post_img1">
+                           <img
+                           class="card-img-top"
+                           src="{{ post.featured_image.url }}"
+                           style="max-height: 1000%; max-width:10000%; object-fit: contain "
+                            alt="{{ result }} Image"/>
+                            {% endif %}
+                           </div>
+                   
+                           <div class="content-img">
+                            <p class="categorie ">{% for categ in post.categories.all %}
+                            <h4><i class="fa fa-book"></i>{{ categ }}</h4>
+                             {% endfor %}</p>
+                            </div>
+                    </div>
+                      </a>
+                    <div class="content-description">
+                     <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                     <h2 class="card-title">{{ post.title }}</h2>
+                     <p class="card-text">{{ post.excerpt }}</p>
+                      </a>
+                    </div>
+                     <div class="card-text">
+                    {{ post.content | slice:":250" | safe }}...
+                    </div>
+                    <hr />
+                    <p class="card-text text-muted h6">Created by:
+                    <span>{{ post.author }} | </span>
+                     {{ post.created_on}} <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                    </p>
+            </div>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}</div>
+    </div>
+  </div>
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link DownButton" 
+          >&laquo; PREV
+        </a>
+      </li>
+      {% endif %} {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link DownButton">
+          NEXT &raquo;</a>
+      </li>
+
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</div>
+{%endblock%}

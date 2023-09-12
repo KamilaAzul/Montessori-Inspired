@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!-- UPDATE COMMENT SECTION -->
+<section class="my-5 min-vh-80" id="delete-commnet">
+    {% if user.id == post.author.id %}
+    <div class="container-fluid p-2 text-dark bg-opacity-10">
+        <div class="row">
+            <div class="col-md-8 m-auto text-center deletePost">
+                <form method="POST" style="background-color: #ddcfcc; height:200px"
+                    action="{% url 'delete-comment' post.slug %}">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <h3 class="mt-5 font-monospace"> Hello {{ user }}, <br>Are you sure you want to delete this comment?</h3>
+                    <a href="{% url 'delete_comment' post.slug %}">
+                        <button class="mx-2  btn b'delete_commenttn-signup btn-lg">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <h2>This commnet wasn't created by you. You can only delete the commnet which you have created</h2>
+    {% endif %}
+</section>
+{% endblock %}

@@ -11,7 +11,7 @@ All comments and posts require approval by the administrator, who is responsible
 
 README Table Content
 
-* [**Montessori Inspired - Introduction**](<#montessori-inspired--introduction>)
+* [**Montessori Inspired - Introduction**](<#montessori-inspired--introductiont>)
     * [Site Users Goal](<#site-users-goal>)
     * [Site Owners Goal](<#site-owners-goal>)
     * [Agile Methodology](<#agile-methodology>)
@@ -29,7 +29,7 @@ README Table Content
 
 * [**Existing Features**](<#existing-features>)
     * [Home Page](#home-page)
-    * [Navigation](<#navigation>)
+    * [Content Page](<#navigation>)
     * [About](<#about>)
     * [Blog Page](#blog-page)
     * [Post Detail Page](#post-detail-page)
@@ -41,13 +41,14 @@ README Table Content
     * [Login Page](#login-page)
     * [Logout Page](#logout-page)
     * [User Profile Page](#user-profile-page)
+    * [Profile Update](#profile-update)
     * [Navbar](#navbar)
     * [Footer](<#footer>)
     * [Like Post](#like-post)
     * [Unlike Post](#unlike-post)
     * [Comment Post](#comment-post)
     - [Delete/Edit Comment](#deleteedit-comment)
-    - [Delete Comment](#delete-comment)
+    - [Delete Comment - 1](#delete-comment)
     - [Edit Comment](#edit-comment)
     - [No Search Found](#no-search-found)
 
@@ -279,24 +280,37 @@ On the Search Results Page, users can see the posts found by their search.  When
 
 ## Signup Page
 
+
 * If the site visitor has no registered yet, they can sign upThe user is asked to enter a username and password to sign up.
 If the username exists or the password is too small the user will be guided by validation messages which were created by modifying Django inbuilt templates.
 
+
 ## Login Page
+
 
 * On the Login Page, the users can log in to the website by placing the username and password. After that, they have access
   to website services registered  for a user.
 
+
 ## Logout Page
+
 
 * On this page, the users can confirm that they wish to exit the website.
 
+
 ## User Profile Page
+
+
+
+
+![User Profile Page](./assets)
+
 
 * On the Profile Page, users have access to their own information and can update their user name, email and profile image.
 
-## New Post Page
 
+### ** New Post
+## Navbar
 
 
 ## Footer
@@ -312,22 +326,25 @@ If the username exists or the password is too small the user will be guided by v
 ### **Like Post](#like-post)
 ### **Unlike Post](#unlike-post)
 ### **Comment Post](#comment-post)
-## Delete/Edit Comment
-## Edit Comment
+### **Delete/Edit Comment](#deleteedit-comment)
+### **Edit Comment](#edit-comment)
+ 
 
-* On Edit Page, loged-in users have an option to leave their comment, delete and edit them. The website superuser can 
-  delete or update any comments on the blog.
 
 ## Technologies Used
 
-## Languages Used
+
+### Languages Used
+
 
 * [HTML 5](https://en.wikipedia.org/wiki/HTML/)- Used to structure all the templates on the site
 * [CSS 3](https://en.wikipedia.org/wiki/CSS)- to provide extra styling to the site
 * [JavaScript](https://www.javascript.com/)- Minimum javascript was used to fade out alerts after a few seconds.
 * [Python](https://www.python.org/)- To provide the functionality to the site. Packages used in the project can be found in requirements.txt
 
-## Django Packages
+
+### Django Packages
+
 
 * [Gunicorn](https://gunicorn.org/)- As the server for Heroku.
 * [Cloudinary](https://cloudinary.com/)- Was used to host the static files and media for the site.
@@ -337,7 +354,10 @@ If the username exists or the password is too small the user will be guided by v
 * [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)- To style the forms.
 * [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)- For authentication, registration, account management.
 
-## Frameworks - Libraries - Programs Used
+
+
+
+### Frameworks - Libraries - Programs Used
 
 
 * [Django](https://www.djangoproject.com/) was used as the framework for the back-end logic of the project. Django enables rapid and secure development.
@@ -362,13 +382,13 @@ I used the following validation tools to validate HTML, CSS, PYTHON codes. Below
 
 
 ### Manual Testing
-
 Testing has taken place continuously throughout the development of the project. Each view was tested regularly.
 
-    * Testing User Stories
-    * Code Validation
-    * Additional Testing
-    * Known Bugs
+
+    * [Testing User Stories](<#testing-user-stories>)
+    * [Code Validation](<#code-validation>)
+    * [Additional Testing](<#additional-testing>)
+    * [Known Bugs](<#known-bugs>)
 
 
 [Back to top](<#contents>)
@@ -486,12 +506,16 @@ In the IDE:
 * Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku.
 * To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
 
+
+
+
 [Back to top](<#contents>)
 
 
 ## Acknowledgements
 
-The website was completed as a Portfolio Project 14 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
+
+The website was completed as a Portfolio Project 1 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
 
 
 I would like to thank all at the Code Institute for their help and support.
