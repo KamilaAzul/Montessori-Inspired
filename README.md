@@ -14,8 +14,8 @@ README Table Content
 * [**Montessori Inspired - Introduction**](<#montessori-inspired--introductiont>)
     * [Site Users Goal](<#site-users-goal>)
     * [Site Owners Goal](<#site-owners-goal>)
-    * [Agile Methodology](#agile-methodology)
-    * [Main Site Goals](#main-site-goals)
+    * [Agile Methodology](<#agile-methodology>)
+    * [Main Site Goals](<#main-site-goals>)
 
 * [**User Experience (UX)**](<#user-experience-ux>)
     * [Wireframes](<#wireframes>)
@@ -69,7 +69,7 @@ README Table Content
 * [Credits](<#credits>)
 * [Acknowledgements](<#acknowledgements>)
 
-#montessori-inspired--introduction
+## Montessori-inspired-introduction
 
 Project milestone 4 for Code Institute Full-stack development program.
 This project is a Full Stack website built using the Django framework.
@@ -78,22 +78,25 @@ They can find here practical tips and information about this method for everyday
 When the user is logged in they can also like/unlike a post and comment on a post.
 Parents can also share their information by adding a post and uploading or updating their user image and details.
 
-[Back to top](<#table-of-content>)
 
-  #site-users-goal
+[Back to top](<#contents>)
+
+## Site-users-goal
 The Monessori Inspired user is interested in the Montessori philosophy and wants to implement this method in his home, in raising his children. The blog is a place where she can learn more about Montessori, interact with other parents, and share her knowledge with like-minded parents.
 
 
-    #site-owners-goal
+## Site-owners-goal
 The website owner's goal is to provide a website where users will be able to read about Montessori-related topics and add their own posts and comments in an easy and accessible way.
 
-[Back to top](<#table-of-content>)
 
-    #agile-methodology
+[Back to top](<#contents>)
+
+## Agile-methodology
+
 All functionality and development of this project were managed using GitHub which Projects can be found
 [here](https://github.com/…)
 
-# Main Site Goals
+## Main Site Goals
 
 * Give users a good experience while using the website.
 * Give users an intuitive to use and easy to navigate website.
@@ -101,7 +104,8 @@ All functionality and development of this project were managed using GitHub whic
 * Give users a website with a clear purpose.
 * Give role-based permissions that allows user to interact with the website.
 
-[Back to top](<#table-of-content>)
+
+[Back to top](<#contents>)
 
 ### Site User
 |  | | |
@@ -138,19 +142,18 @@ All functionality and development of this project were managed using GitHub whic
 | As a Site Admin | I can create drafts of my posts that they can be reviewed and finalized later | &check; |
 | As a Site Admin | I can access an admin area so that I can get a general understanding of logged in users, number of likes and number of posts | &check; |
 
-[Back to top](<#table-of-content>)
 
+[Back to top](<#contents>)
 
 
 ### User Experience (UX)
 
+* Wireframes
 
-    * [Wireframes](<#wireframes>)
-TThe Wireframes were created by me by hand. Drawing gives me more flexibility and is for me more comfortable.
+TThe Wireframes were created by me by hand. Drawing gives me more flexibility and is for me more comfortable to make a chanages during the process.
 
 
-### Site-structure
-
+## Site-structure
 
 The Montessori Inspired site gives different options, depending if a user is logged in or logged out.
 Depending on login status different pages are available for the user. When the user is logged out the pages: *home page*, *about*, *blog*, *search page* are available.
@@ -160,42 +163,15 @@ As I mentioned before the site is a minimalistic, clean, and intuitive design th
 
 [Back to top](<#contents>)
 
-
-### Database-diagram
-
-
-I used Canva to create a database schema to visualize the types of custom models needed for the project.
-I used it as a guide to what needed to be added to each model.
-The relationship between Post, Author, Category, User Profile, and Comment are shown in this diagram.
-
-
-* **Category** - Handles categories.
-* **Post** - Handles all the reviews.
-* **Comment** - Handles all the comments.
-***Author**- Handel's info about the author.
-* **UserProfile** - Handles the user profile information (first name, last name, presentation, and featured image for the specific user/reviewer).
-
-
-![ER Diagram]()
-
-
-[Back to top](<#contents>)
-
-
-### Design
+## Design
 
 
 The site has a very simple and minimalistic design which was chosen by me on purpose. Users can move on the page very intuitively and easily find the content that they are searching for. I wanted to bring a sense of calm when the user is visiting the website.
 
-
-![Colours Palete](./assets/readme/extras/tasty_blog_colors_palete.png)<br>
-
-
-#### Colours
+### Colours
 Colour palette from Coolors
 
-
-![Colour Palette](file:///workspaces/Montessori-Inspired/static/ReadMeFilePhotos/page%20colors.png)
+![Colour Palette](<static/images/ImgReadMeFile/page colors.png>)
 
 
 The selected colors are warm and natural, which is related to the Montessori philosophy, where users mainly use natural wooden materials as toys, tools, or interior decoration. The colors are supposed to refer to this.
@@ -209,7 +185,7 @@ I also wanted to ensure there was good contrast between the background colors an
 [Back to top](<#contents>)
 
 
-### Typography
+## Typography
 
 
 The fonts used for the site are 'Roboto' and 'Lato'.
@@ -229,13 +205,28 @@ The fonts used for the site are 'Roboto' and 'Lato'.
 
 ## Imagery
 
-
-- All the images are related to Montessori philosophy and the website design.
-Only 7 images are static.
+All the images are related to Montessori Philosophy and the website design.
 All other images will be uploaded by the authors to the database.
 
 
-#database-diagram
+## Database-diagram
+
+
+I used Canva to create a database schema to visualize the types of custom models needed for the project.
+I used it as a guide to what needed to be added to each model.
+The relationship between Post, Author, Category, User Profile, and Comment are shown in this diagram.
+
+
+* **Category** - Handles categories.
+* **Post** - Handles all the reviews.
+* **Comment** - Handles all the comments.
+***Author**- Handel's info about the author.
+* **UserProfile** - Handles the user profile information (first name, last name, presentation, and featured image for the specific user/reviewer).
+
+
+![[ER Diagram]](<static/images/ImgReadMeFile/date diagram.png>)
+
+[Back to top](<#contents>)
 
 
 ## Features
