@@ -217,7 +217,7 @@ The relationship between Post, Author, Category, User Profile, and Comment are s
 * The home page gives a short message explaining what the website is about and what the Montessori philosophy is.
 The hero section contains scrolling imagees,wich are related to Montessori education. Changin photos add dynamics and encourage the user to learn more about the blog's topic. There is a button in the photo that takes the user to the blog page.
 
-[Back to top](<#contents>)
+[Back to top](static/images/ImgReadMeFile/hero.png)
 
 ## Navbar
 
@@ -311,7 +311,7 @@ If the username exists or the password is too small the user will be guided by v
 
 ## Comment Post
 
-
+* When users are logged in to the website they can comment on a post. The comment will be visible only after Admin approval.
 
 * On Edit Page, loged-in users have an option to leave their comment, delete and edit them. The website superuser can 
   delete or update any comments on the blog.
