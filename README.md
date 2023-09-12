@@ -302,19 +302,21 @@ If the username exists or the password is too small the user will be guided by v
 
 ## Like Post
 
+* When users are logged in to the website they can like a post.<br>
+
 ## Unlike Post
+
+*When users are logged in to the website they can unlike a post.
+
 
 ## Comment Post
 
 
-    * [Like Post](#like-post)
-    * [Unlike Post](#unlike-post)
-    * [Comment Post](#comment-post)
 
 * On Edit Page, loged-in users have an option to leave their comment, delete and edit them. The website superuser can 
   delete or update any comments on the blog.
 
-## Technologies Used
+# Technologies Used
 
 ## Languages Used
 
