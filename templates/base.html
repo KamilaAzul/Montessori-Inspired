@@ -60,16 +60,17 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'blog' %}"  aria-label="Go to the about page">Blog</a>
             </li>
+
        
             {% if user.is_authenticated %}
                     {% if user.profile.image %}
                     <li><a href="{% url 'profile' %}"><img
                         class="author-img rounded-circle img-fluid" style="width: 50px;"
-                             src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
+                             src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1694443403/mitqrjy1xug4hltxxd7w.png"
                              alt="User Image"
                            /></li>
                     {% else %}
-                    <li><i class="fa-solid fa-face-grin" style="width: 50px;"alt="User Image"></i></li>
+                    <li><img class="author-img rounded-circle img-fluid" style="width: 50px;"alt="User Image" src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1694379442/lrhgzlff8fkawsvjohde.png" /></li>
                     {% endif %}</a>
                     <li>
             <li class="nav-item dropdown">
@@ -80,10 +81,10 @@
                     <li>
                         <hr class="dropdown-divider">
                     <li><a class="dropdown-item" href="{% url 'profile' %}" aria-label="Go to the user profile page">My profile</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                  <li><a class="dropdown-item" href="{% url 'new_post' %}" aria-label="Go to the user profile page">Add post</a></li>
                 </ul>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'new_post' %}">Add post</a>
-                </li>
             </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

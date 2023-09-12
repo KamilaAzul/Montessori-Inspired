@@ -159,7 +159,6 @@ As I mentioned before the site is a minimalistic, clean, and intuitive design th
 
 ## Design
 
-
 The site has a very simple and minimalistic design which was chosen by me on purpose. Users can move on the page very intuitively and easily find the content that they are searching for. I wanted to bring a sense of calm when the user is visiting the website.
 
 ## Colours
@@ -219,6 +218,8 @@ The hero section contains scrolling imagees,wich are related to Montessori educa
 
 [Back to top](static/images/ImgReadMeFile/hero.png)
 
+![what do we do section](static/images/ImgReadMeFile/UnderHeroSection.png)
+
 ## Navbar
 
 * The navigation bar is very clean and straight forward and easy to use. Iis present at the top of every page and navigates all links to the respective pages.
@@ -259,9 +260,13 @@ The author of posts/ comments will have the option to edit or delete them.
 
 ## Delete/Edit Comment
 
-![Edit Comments Page](./assets/readme/features/tasty_blog_edit_comments_page.jpg)
-
 * On this page, users are allowed to edit their own comments. The website superuser can delete or update any comments on the blog without having to access the admin panel.
+
+![Alt text](static/images/ImgReadMeFile/EditComment.png)
+* Edit Comment
+
+![Alt text](static/images/ImgReadMeFile/deleteComment.png)
+* Delete Comment
 
 ## Search Results Page
 
@@ -271,6 +276,10 @@ On the Search Results Page, users can see the posts found by their search.  When
 * If there are No Results Found, users will see the message informing them about this
 
 ![Seach page](<static/images/ImgReadMeFile/search page.png>)
+* Search results
+
+![No search results](<static/images/ImgReadMeFile/NoSearch Results.png>)
+* No search results
 
 
 ## Signup Page
@@ -290,6 +299,8 @@ If the username exists or the password is too small the user will be guided by v
 ## User Profile Page
 
 * On the Profile Page, users have access to their own information and can update their user name, email and profile image.
+
+![Profile Page](static/images/ImgReadMeFile/profilePage.png)
 
 ## New Post Page
 
