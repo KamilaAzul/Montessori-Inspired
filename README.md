@@ -29,11 +29,11 @@ README Table Content
 
 * [**Existing Features**](<#existing-features>)
     * [Home Page](#home-page)
-    * [Navigation](<#navigation>)
+    * [Navbar](<#navigation>)
     * [About](<#about>)
     * [Blog Page](#blog-page)
     * [Post Detail Page](#post-detail-page)
-    * [Edit Comments Page](#edit-comments-page)
+    * [Delete/Edit Comment](#deleteedit-comment)
     * [Categories Page](#categories-page)
     * [Search Box](#search-box)
     * [Search Results Page](#search-results-page)
@@ -41,15 +41,11 @@ README Table Content
     * [Login Page](#login-page)
     * [Logout Page](#logout-page)
     * [User Profile Page](#user-profile-page)
-    * [Navbar](#navbar)
     * [Footer](<#footer>)
     * [Like Post](#like-post)
     * [Unlike Post](#unlike-post)
     * [Comment Post](#comment-post)
-    - [Delete/Edit Comment](#deleteedit-comment)
-    - [Delete Comment](#delete-comment)
-    - [Edit Comment](#edit-comment)
-    - [No Search Found](#no-search-found)
+   
 
 * [**Technologies Used**](<#technologies-used>)
     * [Languages](<#languages>)
@@ -223,7 +219,7 @@ The hero section contains scrolling imagees,wich are related to Montessori educa
 
 [Back to top](<#contents>)
 
-## Navigation
+## Navbar
 
 * The navigation bar is very clean and straight forward and easy to use. Iis present at the top of every page and navigates all links to the respective pages.
 The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
@@ -261,7 +257,7 @@ The author of posts/ comments will have the option to edit or delete them.
 
 ![Post Detail Page - Top]()
 
-## Edit Comments Page
+## Delete/Edit Comment
 
 ![Edit Comments Page](./assets/readme/features/tasty_blog_edit_comments_page.jpg)
 
@@ -301,19 +297,19 @@ If the username exists or the password is too small the user will be guided by v
 
 ## Footer
 
-
-![header](docs/readme_images/features/footer.png)
-
-
 * The footer is simple and estetic. In this section user can find links to Facebook, Instagram and Youtube.
   Clicking the links in the footer opens a separate browser.
 
+## Like Post
 
-### **Like Post](#like-post)
-### **Unlike Post](#unlike-post)
-### **Comment Post](#comment-post)
-## Delete/Edit Comment
-## Edit Comment
+## Unlike Post
+
+## Comment Post
+
+
+    * [Like Post](#like-post)
+    * [Unlike Post](#unlike-post)
+    * [Comment Post](#comment-post)
 
 * On Edit Page, loged-in users have an option to leave their comment, delete and edit them. The website superuser can 
   delete or update any comments on the blog.
@@ -492,8 +488,6 @@ In the IDE:
 ## Acknowledgements
 
 The website was completed as a Portfolio Project 14 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
-
-
-I would like to thank all at the Code Institute for their help and support.
+I would like to thank my mentor who did his best to guide me, and all at the Code Institute for their help and support.
 
 
