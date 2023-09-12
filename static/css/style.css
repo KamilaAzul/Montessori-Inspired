@@ -278,9 +278,11 @@ html {
 
 /* user post page*/
 #user-posts {
-    margin-top: 110px;
+    margin-top: 140px;
 }
-
+#user-posts .cointainer{
+    margin-top: 50px;
+}
 #post_titel h3 {
 
     padding-top: 30px;
