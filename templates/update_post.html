@@ -11,20 +11,10 @@
         <h3 class="mt-2 text-center font-monospace">
           Would you like to update your post:
         </h3>
-        <form
-          method="POST"
-          enctype="multipart/form-data"
-          class="input-fields form-control p-3"
-          id="updatePost"
-          style="background-color: #ddcfcc"
-        >
+        <form method="POST" enctype="multipart/form-data" class="input-fields form-control p-3" id="updatePost"
+          style="background-color: #ddcfcc">
           {% csrf_token %} {{ form | crispy }}
-          <button
-            type="submit"
-            value="Update"
-            class="mx-2 btn btn-signup btn-lg"
-            id="update-button-form"
-          >
+          <button type="submit" value="Update" class="mx-2 btn btn-signup btn-lg" id="update-button-form">
             Update
           </button>
         </form>

@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['montessori-inspired-a464ed5581f4.herokuapp.com', 'localhost',
-                 '8000-kamilaazul-montessoriin-3ccve3ilfv7.ws-eu104.gitpod.io']
+                 '8000-kamilaazul-montessoriin-kv4l8sbm64d.ws-eu104.gitpod.io']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

@@ -5,11 +5,11 @@
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 mt-4 text-center">
-                <h2>Categories: <span>{{ categ }}</span></h2> 
+                <h2>Categories: <span>{{ categ }}</span></h2>
             </div>
         </div>
-    {% if categories_posts %}
-   
+        {% if categories_posts %}
+
         <div class="container">
             <h4 class="text-center">Have a look at all posts related to your choice: {{ categ }}</h4>
             <hr>
@@ -26,7 +26,9 @@
                                         <div class="image-container">
                                             <!-- The featured image URL or an alternative if one isnt provided -->
                                             {% if "placeholder" in post.featured_image.url %}
-                                            <img class="card-img" src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692880316/pexels-arina-krasnikova-5119837_qgqrhr.jpg" width="100%">
+                                            <img class="card-img"
+                                                src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692880316/pexels-arina-krasnikova-5119837_qgqrhr.jpg"
+                                                width="100%">
                                             {% else %}
                                             <img src=" {{ post.featured_image.url }}" class="card-img-top"
                                                 alt="{{ post.title }} image">

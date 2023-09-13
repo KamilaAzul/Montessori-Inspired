@@ -1,42 +1,47 @@
 {% extends 'base.html' %} {% load static %} {% block content %} 
 
 <!-- HERO SECTION -->
+<section id="hero" class="p-5 text-center bg-image rounded-3">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
 
         <div class="carousel-item active">
             <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692799120/heroPhoto_afx6wj.png" class="d-block w-100"
-                height="900px" alt="toys">
+                height="700px" alt="toys">
             <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
                     <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">Right Toys At The
-                            Right Time
+                        Right Time
                     </h1>
-                    <a class="btn btn-outline-light btn-lg" href="{% url 'user-posts' %}"  role="button">See the post</a>
+                <br>
+                    <a class="btn btn-outline-light btn-lg pt-2" href="{% url 'user-posts' %}"  role="button">See the post</a>
                 </div>
             </div>
         </div>
 
         <div class="carousel-item">
             <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1694464627/cooking_ehzyrq.png"
-                class="d-block w-100" height="900px" alt="kitchen">
+                class="d-block w-100" height="700px" alt="kitchen">
 
             <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
                     <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">The Importance of
-                            Practical Life Activities</mark></h1>
-                    <a class="btn btn-outline-light btn-lg" href="{% url 'user-posts' %}" role="button">See the post</a>
+                        Practical Life Activities
+                          </mark></h1>
+                            <br>
+                    <a class="btn btn-outline-light btn-lg pt-2" href="{% url 'user-posts' %}" role="button">See the post</a>
                 </div>
             </div>
         </div>
 
         <div class="carousel-item">
             <img src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1692802265/room1_vaohvy.png"
-                class="d-block w-100" height="900px" alt="decor">
+                class="d-block w-100" height="700px" alt="decor">
             <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
                     <h1 class="mb-3"><mark style="background-color: #8b674b;" class=" text-white">A Montessori Room For The Little Ones</mark></h1>
-                    <a class="btn btn-outline-light btn-lg" href="{% url 'user-posts' %}"  role="button">See the post</a>
+                    <br>
+                    <a class="btn btn-outline-light btn-lg" href="{% url 'user-posts' %}"  style="background-color: #C09573" role="button">See the post</a>
                 </div>
             </div>
         </div>
@@ -53,6 +58,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+</section>
 
 
 <!-- END OF HERO Section -->

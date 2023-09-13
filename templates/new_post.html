@@ -15,17 +15,9 @@ user.is_authenticated %} {% include "components/hero_small.html" %}
       <h2>Thank you! Your post was submitted successfully!</h2>
       {% else %}
       <div class="form-group">
-        <form
-          method="POST"
-          enctype="multipart/form-data"
-          class="input-fields p-2"
-        >
+        <form method="POST" enctype="multipart/form-data" class="input-fields p-2">
           {% csrf_token %} {{ form | crispy }} {{ post.content | safe }}
-          <button
-            type="submit"
-            class="mx-2 btn btn-signup btn-lg"
-            id="NewPostButton"
-          >
+          <button type="submit" class="mx-2 btn btn-signup btn-lg" id="NewPostButton">
             Submit
           </button>
         </form>
