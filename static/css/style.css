@@ -235,7 +235,7 @@ html {
 #profile_container{
 
     margin-top: 90px;
-    background-color: #F4DDD8;
+   
 }
 
 #Profile_infotext{
@@ -297,7 +297,9 @@ html {
     background-color: rgb(155, 110, 59);
     color: #f5f1f1;
 }
-
+#card-bodyPost{
+    height: 850px;
+}
 #post_titel h3:hover {
     background-color: #f5f1f1;
     color: #6a5124;
@@ -314,9 +316,14 @@ html {
     background-color: rgb(155, 110, 59);
 }
 /*About page*/
-#about 
+
 #about .container {
     padding: 0 15px;
+}
+
+#aboutText{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 #about p{
 

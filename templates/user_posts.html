@@ -15,15 +15,15 @@
     <div class="row">
       <!-- Blog Entries Column -->
       <div class="col-12 mt-3 left">
-        <div class="row ">
+        <div class="row text-center">
           {% if post_list|length > 0 %}
           <h3>Would you like to <a href="{% url 'new_post' %}">
               <button class="mx-2  btn btn-signup btn-lg" id="Add_new_post">Add a new post</button></a></h3>
           <h4 class="mt-3 p-2">Have a look at your posts:</h4>
           {% for post in post_list %}
           <div class="col-md-4 ">
-            <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
-              <div class="card-body">
+            <div class="card mb-4 content-box"id="card-bodyPost" style="background-color: #ddcfcc;">
+              <div class="card-body" id="card-bodyPost">
                 <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                   <!-- Image and text container -->
                   <div class="image-container" id="Image_blog_box">
@@ -34,11 +34,11 @@
                       <div class="content-imgPhoto">
                         <img class="card-img-top"
                           src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1694450752/static/images/photos/face.4b409b62958e.png"
-                          style="max-height: 1000%; max-width:10000%; object-fit: contain " />
+                          style="max-height: 90%; max-width:100%; object-fit: contain " />
                         {% else %}
                         <div id="post_img1">
                           <img class="card-img-top" src="{{ post.featured_image.url }}"
-                            style="max-height: 1000%; max-width:10000%; object-fit: contain "
+                            style="max-height: 100%; max-width:100%; object-fit: contain "
                             alt="{{ result }} Image" />
                           {% endif %}
                         </div>
