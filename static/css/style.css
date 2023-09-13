@@ -27,6 +27,13 @@ html {
  
     line-height: 2;
 }
+/*Small Hero Photo*/
+
+#small-hero {
+    
+    height: 400px;
+    width: 100%;
+}
 
 /*Navbar*/
 #mainNav {

@@ -1,11 +1,11 @@
 
-# **Monthesorri Inspired**
+# **Montesori Inspired**
 
 Montessori Inspired is a website created for parents who are interested in raising their children with a Montessori method of education.
 After logging in, all visitors can write reviews and comment on other users' content.
 All comments and posts require approval by the administrator, who is responsible for ensuring that everyone feels safe from abuse, inappropriate language, etc. Approvals are made from the administration panel. The site has a clean design that makes it easy for users to navigate.
 
-[Live Project Here](https:/)
+[Live Project Here](https://montessori-inspired-a464ed5581f4.herokuapp.com/blog)
 
 (photo of the website)
 
@@ -72,6 +72,7 @@ They can find here practical tips and information about this method for everyday
 When the user is logged in they can also like/unlike a post and comment on a post.
 Parents can also share their information by adding a post and uploading or updating their user image and details.
 
+![Home Page](static/images/ImgReadMeFile/HomePage.png)
 
 [Back to top](<#contents>)
 
@@ -232,10 +233,13 @@ The navbar is fully responsive, collapsing into a hamburger menu when the screen
 * Login / Sign Up - Gives the user the opportunity to log in or sign up if not ready a registered user at Review | Alliance.
 * Search Box - allowes the user to search of particular content.
 
+![Alt text](static/images/ImgReadMeFile/NavbarNotLOgedIn.png)
+
 *Links that are visible to loged-in user:*
 
 * My space- after collapsing will allows user to got to: the users profile, users posts or add a new post.
 
+![Alt text](static/images/ImgReadMeFile/NavbarAfterLogging.png)
 [Back to top](<#contents>)
 
 ## About
@@ -256,11 +260,12 @@ The blog posts is paginated in a way that 9 posts are displayed. Further post ca
 * On the top of the Post Detail Page, users can see the post's main image and they can also have access to information about the post like category,  author name, posted date, and the option to like/unlike the post. It will also show how many likes and comments the post has received.<br>
 The author of posts/ comments will have the option to edit or delete them.
 
-![Post Detail Page - Top]()
+![Post Detail Page - Topt](static/images/ImgReadMeFile/PostPageContent.png)
+
 
 ## Delete/Edit Comment
 
-* On this page, users are allowed to edit their own comments. The website superuser can delete or update any comments on the blog without having to access the admin panel.
+* On this part of the Post Page, logged-in users are allowed to edit their own comments. The website superuser can delete or update any comments on the blog without having to access the admin panel.
 
 ![Alt text](static/images/ImgReadMeFile/EditComment.png)
 * Edit Comment
