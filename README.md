@@ -253,7 +253,7 @@ The navbar is fully responsive, collapsing into a hamburger menu when the screen
 * On the Blog Page, users have access to all posts available on the website. The user can choose which post to read by clicking on the post card.
 The blog posts is paginated in a way that 9 posts are displayed. Further post can be accessed by clicking next button. Each blog post shows the image related to the post content. The user can see the post title with specific fields and sliced post content along with the name of author, submitted date and shows the number of likes and comment icon.
 
-![Blog Page]()
+(![Blog Page](static/images/ImgReadMeFile/Blog.png))
 
 ## Post-detail-page
 
@@ -262,17 +262,21 @@ The author of posts/ comments will have the option to edit or delete them.
 
 ![Post Detail Page - Topt](static/images/ImgReadMeFile/PostPageContent.png)
 
-
 ## Delete/Edit Comment
 
 * On this part of the Post Page, logged-in users are allowed to edit their own comments. The website superuser can delete or update any comments on the blog without having to access the admin panel.
 
-![Alt text](static/images/ImgReadMeFile/EditComment.png)
+![Edit Comment](static/images/ImgReadMeFile/EditComment.png)
+
 * Edit Comment
 
-![Alt text](static/images/ImgReadMeFile/deleteComment.png)
+![Delete Comment](static/images/ImgReadMeFile/deleteComment.png)
+
 * Delete Comment
 
+![Comment waiting approwal](<static/images/ImgReadMeFile/Comment waiting aproval.png>)
+
+* Comment waiting approwal
 ## Search Results Page
 
 * After entering the word that the user is looking for, the person will be redirected to the search results page.
@@ -286,20 +290,25 @@ On the Search Results Page, users can see the posts found by their search.  When
 ![No search results](<static/images/ImgReadMeFile/NoSearch Results.png>)
 * No search results
 
-
 ## Signup Page
 
 * If the site visitor has no registered yet, they can sign upThe user is asked to enter a username and password to sign up.
 If the username exists or the password is too small the user will be guided by validation messages which were created by modifying Django inbuilt templates.
+
+![Alt text](static/images/ImgReadMeFile/Register.png)
 
 ## Login Page
 
 * On the Login Page, the users can log in to the website by placing the username and password. After that, they have access
   to website services registered  for a user.
 
+![Alt text](static/images/ImgReadMeFile/LogIn.png)
+
 ## Logout Page
 
 * On this page, the users can confirm that they wish to exit the website.
+
+![Alt text](static/images/ImgReadMeFile/LogOut.png)
 
 ## User Profile Page
 
@@ -310,11 +319,12 @@ If the username exists or the password is too small the user will be guided by v
 ## New Post Page
 
 
-
 ## Footer
 
 * The footer is simple and estetic. In this section user can find links to Facebook, Instagram and Youtube.
   Clicking the links in the footer opens a separate browser.
+
+![Alt text](static/images/ImgReadMeFile/Footer.png)
 
 ## Like Post
 
@@ -331,6 +341,8 @@ If the username exists or the password is too small the user will be guided by v
 
 * On Edit Page, loged-in users have an option to leave their comment, delete and edit them. The website superuser can 
   delete or update any comments on the blog.
+
+![Alt text](static/images/ImgReadMeFile/EditComment.png)
 
 # Technologies Used
 
