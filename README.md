@@ -7,9 +7,9 @@ All comments and posts require approval by the administrator, who is responsible
 
 [Live Project Here](https://montessori-inspired-a464ed5581f4.herokuapp.com/blog)
 
-(photo of the website)
+![photo of the website](static/images/ImgReadMeFile/WebsitePhoto.png)
 
-README Table Content
+## Table Content
 
 * [**Montessori Inspired - Introduction**](<#montessori-inspired--introduction>)
     * [Site Users Goal](<#site-users-goal>)
@@ -71,8 +71,6 @@ Montessori Inspired is a website created for parents who are interested in raisi
 They can find here practical tips and information about this method for everyday life.
 When the user is logged in they can also like/unlike a post and comment on a post.
 Parents can also share their information by adding a post and uploading or updating their user image and details.
-
-![Home Page](static/images/ImgReadMeFile/HomePage.png)
 
 [Back to top](<#contents>)
 
@@ -217,7 +215,9 @@ The relationship between Post, Author, Category, User Profile, and Comment are s
 * The home page gives a short message explaining what the website is about and what the Montessori philosophy is.
 The hero section contains scrolling imagees,wich are related to Montessori education. Changin photos add dynamics and encourage the user to learn more about the blog's topic. There is a button in the photo that takes the user to the blog page.
 
-[Back to top](static/images/ImgReadMeFile/hero.png)
+![Home page](static/images/ImgReadMeFile/hero.png)
+
+* What we do section
 
 ![what do we do section](static/images/ImgReadMeFile/UnderHeroSection.png)
 
@@ -246,7 +246,7 @@ The navbar is fully responsive, collapsing into a hamburger menu when the screen
 
 * The About Page gives, users information about the author and and it makes an introduction to the Montessori Inspired. It explains as well the main purpose of the blog.<br>
 
-![About]()
+![About](![Alt text](static/images/ImgReadMeFile/AboutUS.png))
 
 ## Blog Page
 
