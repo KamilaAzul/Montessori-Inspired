@@ -246,14 +246,14 @@ The navbar is fully responsive, collapsing into a hamburger menu when the screen
 
 * The About Page gives, users information about the author and and it makes an introduction to the Montessori Inspired. It explains as well the main purpose of the blog.<br>
 
-![About](![Alt text](static/images/ImgReadMeFile/AboutUS.png))
+![About ](static/images/ImgReadMeFile/AboutUS.png)
 
 ## Blog Page
 
 * On the Blog Page, users have access to all posts available on the website. The user can choose which post to read by clicking on the post card.
 The blog posts is paginated in a way that 9 posts are displayed. Further post can be accessed by clicking next button. Each blog post shows the image related to the post content. The user can see the post title with specific fields and sliced post content along with the name of author, submitted date and shows the number of likes and comment icon.
 
-(![Blog Page](static/images/ImgReadMeFile/Blog.png))
+![Blog Page](static/images/ImgReadMeFile/Blog.png)
 
 ## Post-detail-page
 
