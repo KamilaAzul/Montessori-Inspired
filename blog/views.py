@@ -185,15 +185,6 @@ def create_post(request):
     })
     return render(request, 'new_post.html', context)
 
-class Update_post(LoginRequiredMixin, UpdateView):
-
-    model = Post
-    fields = ['title', 'content']
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-
 @login_required()
 def update_post(request, slug):
     """
@@ -222,7 +213,7 @@ def update_post(request, slug):
 
     template = ("update_post.html",)
     context = {"form": form, "post": post}
-    return render(request, template, context)
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 
