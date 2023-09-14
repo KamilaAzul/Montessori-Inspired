@@ -164,6 +164,35 @@ class DeletePost(generic.DeleteView):
         """
         return reverse("user-posts")
 
+@login_required
+def create_post(request):
+    context = {}
+    form = PostForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            print("\n\n form is valid")
+            new_post = form.save(commit=False)
+            new_post.author = request.user
+            new_post.save()
+            messages.success(
+                    request, "Your post was created successfully and it's waiting for approval!")
+
+            return redirect('blog')
+
+    context.update({
+        'form': form,
+        'title': 'Create New Post'
+    })
+    return render(request, 'new_post.html', context)
+
+class Update_post(LoginRequiredMixin, UpdateView):
+
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 @login_required()
 def update_post(request, slug):
@@ -196,27 +225,6 @@ def update_post(request, slug):
     return render(request, template, context)
 
 
-@login_required
-def create_post(request):
-    context = {}
-    form = PostForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            print("\n\n form is valid")
-            new_post = form.save(commit=False)
-            new_post.author = request.user
-            new_post.save()
-            messages.success(
-                    request, "Your post was created successfully and it's waiting for approval!")
-
-            return redirect('blog')
-
-    context.update({
-        'form': form,
-        'title': 'Create New Post'
-    })
-    return render(request, 'new_post.html', context)
-
 
 class UserPost(LoginRequiredMixin, generic.ListView):
     """
@@ -242,13 +250,6 @@ class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = CommentForm
     success_message = 'The comment was successfully updated'
 
-    def get_success_url(self):
-        """
-        Set the reverse url for the successful edit of comment
-        of the post to the database
-        """
-        return reverse("user-posts")
-
 
 @login_required
 def delete_comment(request, comment_id):
@@ -260,7 +261,7 @@ def delete_comment(request, comment_id):
     messages.success(request, 'The comment was deleted successfully')
     return HttpResponseRedirect(reverse(
         'post_detail', args=[comment.post.slug]))
-
+    
 
 class Profile(generic.TemplateView):
     """

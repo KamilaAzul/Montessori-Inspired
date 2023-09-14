@@ -59,6 +59,10 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def get_absolute_url(self):
+        """Sets absolute URL"""
+        return reverse('post_detail', args=[self.post.slug])
+
 
 class Comment(models.Model):
     """
@@ -78,6 +82,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+    
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[self.post.slug])
 
 
 STATUS = ((0, "Draft"), (1, "Published"))

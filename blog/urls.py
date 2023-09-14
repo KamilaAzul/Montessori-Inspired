@@ -27,7 +27,7 @@ urlpatterns = [
         views.DeletePost.as_view(),
         name="delete-post",
     ),
-    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('post_detail/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]
 
 if settings.DEBUG:

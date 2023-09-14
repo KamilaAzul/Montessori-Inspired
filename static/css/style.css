@@ -157,7 +157,9 @@ html {
 
     margin-top: 15px;
 }
-
+#editCommentButt button {
+    margin-bottom: 20px;
+}
 /*post page*/
 
 #post-content {

@@ -26,10 +26,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['montessori-inspired-a464ed5581f4.herokuapp.com', 'localhost',
-                 '8000-kamilaazul-montessoriin-kv4l8sbm64d.ws-eu104.gitpod.io']
+                 '8000-kamilaazul-montessoriin-r6far15veuh.ws-eu104.gitpod.io']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -114,7 +114,7 @@ WSGI_APPLICATION = 'montessori.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
