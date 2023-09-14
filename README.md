@@ -468,56 +468,50 @@ DATABASES = {
 * Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: `os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"`
 * In Heroku, click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
 * Add Cloudinary libraries to the installed apps section of settings.py file:
- ```
+ 
  'cloudinary_storage'
  'django.contrib.staticfiles''
  'cloudinary'
- ```
-* Connect Cloudinary to the Django app in `settings.py`:
-```
-STATIC_URL = '/static'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'STATIC')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE =
-'cloudinary_storage.storage.MediaCloudinaryStorage'
-* Link file to the templates directory in Heroku
-* Place under the BASE_DIR: TEMPLATES_DIR = os.path.join(BASE_DIR,
-'templates')
-```
+
+* Connect Cloudinary to the Django app in `settings.py`
+
+ Add Cloudinary URL to env.py
+* Add the cloudinary libraries to the list of installed apps.
+* Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+* Link the file to the templates directory in Heroku.
+* Change the templates directory to TEMPLATES_DIR
+* Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
 * Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: `'DIRS': [TEMPLATES_DIR]`
-* Add Heroku Hostname to ALLOWED_HOSTS:
-```ALLOWED_HOSTS = ['<Heroku_app_name>.herokuapp.com', 'localhost']```
-* Create Procfile at the top level of the file structure and insert the following:
-    ``` web: gunicorn PROJECT_NAME.wsgi ```
-
-
+* Add Heroku Hostname to ALLOWED_HOSTS.
+* Create Procfile at the top level of the file structure.
 * Commit and push the code to the GitHub Repository.
 
 
 ### 5. Heroku Deployment:
+
 * Click Deploy tab in Heroku.
 * Select Github as the deployment method.
 * Confirm you want to connect to GitHub.
-* Search for the repository name and click the connect button to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository.
+* Search for the repository name and click the connect button to link the heroku app with the Github repository. The box will confirm that heroku 
+  is connected to the repository.
 * Scroll to the bottom of the deploy page and select the preferred deployment type.
-* Click either Enable Automatic Deploys for automatic deployment when you push updates to Github or To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
+* Click either Enable Automatic Deploys for automatic deployment when you push updates to Github or To manually deploy click the button 'Deploy 
+  Branch'. The default 'main' option in the dropdown menu should be selected in both cases. 
+* When development is complete change the debug setting to: `DEBUG = False` in settings.py
+* In this project the summernote editor was used so for this to work in Heroku add: `X_FRAME_OPTIONS = SAMEORIGIN `to
+  settings.py.
+* In Heroku settings, delete the config vars for `DISABLE_COLLECTSTATIC = 1`
+* Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. 
+  Manually deployed branches will need re-deploying each time the repo is updated.
+* When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
 
-
-### 6. Final Deployment
-In the IDE:
-* When development is complete change the debug setting to: `DEBUG = False` in `settings.py`
-* In Heroku settings config vars change the `DISABLE_COLLECTSTATIC` value to 0
-* Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku.
-* To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
 
 [Back to top](<#contents>)
 
 
 ## Acknowledgements
 
-The website was completed as a Portfolio Project 14 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
-I would like to thank my mentor who did his best to guide me, and all at the Code Institute for their help and support.
+The website was completed as a Portfolio Project 4 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
+I would like to thank my mentor Precious_Mentor for guiding me, and all at the Code Institute for their help and support.
 
 
