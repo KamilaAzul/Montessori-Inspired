@@ -21,7 +21,7 @@ urlpatterns = [
     path(
         "user_posts/", views.UserPost.as_view(), name="user-posts"
     ),
-    path("update_post/<slug:slug>/", views.update_post, name="update-post"),
+    path("update_post/<slug:slug>/", views.EditPost.as_view(), name="update-post"),
     path(
         "delete_post/<slug:slug>/",
         views.DeletePost.as_view(),

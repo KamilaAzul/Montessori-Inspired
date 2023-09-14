@@ -185,35 +185,21 @@ def create_post(request):
     })
     return render(request, 'new_post.html', context)
 
-@login_required()
-def update_post(request, slug):
+class EditPost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
-    Users can update their blog post that they have created
+    Edit Post
     """
-    post = get_object_or_404(Post, slug=slug)
-    if request.user.id == post.author.id:
-        if request.method == "POST":
-            form = UpdatePostForm(request.POST, request.FILES, instance=post)
-            if form.is_valid():
-                post = form.save(commit=False)
-                post.author = request.user
-                post.slug = slugify(post.title)
-                post.status = 1
-                form.save()
-                messages.success(
-                    request, "Your post was updated successfully!")
-                return HttpResponseRedirect(reverse(
-                    'post_detail'))
-            else:
-                messages.error(request, "Failed to update the post.")
-        else:
-            form = UpdatePostForm(instance=post)
-    else:
-        messages.error(request, "Sorry, This is not your post.")
+    model = Post
+    form_class = PostForm
+    template_name = 'update_post.html'
+    success_message = 'The post was successfully updated'
 
-    template = ("update_post.html",)
-    context = {"form": form, "post": post}
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    def get_success_url(self):
+        """
+        Set the reverse url for the successful delete
+        of the post to the database
+        """
+        return reverse("user-posts")
 
 
 

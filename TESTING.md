@@ -64,3 +64,50 @@ All HTML pages were run through the [W3C HTML Validator](https://validator.w3.or
 | login.html           | No errors  | N/A       |
 | logout.html          | N/A        | No errors |
 | signup.html          | No errors  | N/A       |
+
+
+class EditPost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Edit Post
+    """
+    model = Post
+    form_class = PostForm
+    template_name = 'update_post.html'
+    success_message = 'The post was successfully updated'
+
+    def get_success_url(self):
+        """
+        Set the reverse url for the successful delete
+        of the post to the database
+        """
+        return reverse("user-posts")
+
+@login_required()
+def update_post(request, slug):
+    """
+    Update the blog post 
+    """
+    post = get_object_or_404(Post, slug=slug)
+    if request.user.id == post.author.id:
+        if request.method == "POST":
+            form = UpdatePostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.slug = slugify(post.title)
+                post.status = 1
+                form.save()
+                messages.success(
+                    request, "Your post was updated successfully!")
+                return HttpResponseRedirect(reverse(
+                    'post_detail'))
+            else:
+                messages.error(request, "Failed to update the post.")
+        else:
+            form = UpdatePostForm(instance=post)
+    else:
+        messages.error(request, "Sorry, This is not your post.")
+
+    template = ("update_post.html",)
+    context = {"form": form, "post": post}
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
