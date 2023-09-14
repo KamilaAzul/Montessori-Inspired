@@ -19,9 +19,7 @@
                         {% if "placeholder" in post.featured_image.url %}
                         <div class="content-box bg-linear-gradient">
                           <div class="content-imgPhoto">
-                            <img class="card-img-top"
-                              src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
-                              style="max-height: 100%; max-width:100%"/>
+                            <img class="card-img-top" src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png" style="max-height: 100%; max-width:100%"/>
                             {% else %}
                             <div id="post_img1">
                               <img class="card-img-top" src="{{ post.featured_image.url }}"
@@ -30,9 +28,9 @@
                               {% endif %}
                             </div>
                             <div class="content-img">
-                              <p class="categorie ">{% for categ in post.categories.all %}
+                              <p class="categorie ">{% for categ in post.categories.all %}</p>
                               <h4><i class="fa fa-book"></i>{{ categ }}</h4>
-                              {% endfor %}</p>
+                              {% endfor %}
                             </div>
                           </div>
                     </a>
@@ -45,7 +43,7 @@
                     <div class="card-text">
                       {{ post.content | slice:":250" | safe }}...
                     </div>
-                    <hr />
+                    <hr/>
                     <p class="card-text text-muted h6">Created by:
                       <span>{{ post.author }} | </span>
                       {{ post.created_on}} <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
