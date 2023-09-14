@@ -110,7 +110,7 @@ html {
     height: 40px;
 }
 
-#Image_blog_box {
+.Image_blog_box {
 
     max-height: 500px;
     width: 100%;
