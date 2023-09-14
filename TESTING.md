@@ -3,41 +3,12 @@
 Back to the [README](README.md)
 
 # Table of Contents
-- [User Story Testing](#user-story-testing)
+
 - [Validator Testing](#validator-testing)
   * [HTML](#html)
-    + [Fixed Errors](#fixed-errors)
-    + [Unfixed Errors](#unfixed-errors)
   * [CSS](#css)
   * [Javascript](#javascript)
   * [Python](#python)
-  * [Lighthouse](#lighthouse)
-- [Browser Testing](#browser-testing)
-- [Device Testing](#device-testing)
-- [Manual Testing](#manual-testing)
-  * [Site Navigation](#site-navigation)
-  * [Home Page](#home-page)
-  * [Browse Recipes Page](#browse-recipes-page)
-  * [Recipe Detail Page](#recipe-detail-page)
-  * [Add Recipe Page](#add-recipe-page)
-  * [Update Recipe Page](#update-recipe-page)
-  * [Confirm Delete Recipe Page](#confirm-delete-recipe-page)
-  * [My Recipes Page](#my-recipes-page)
-  * [My Bookmarks Page](#my-bookmarks-page)
-  * [My Meal Plan Page](#my-meal-plan-page)
-  * [Django All Auth Pages](#django-all-auth-pages)
-- [Bugs](#bugs)
-  * [Fixed Bugs](#fixed-bugs)
-    + [Overwrite Meal Plan Items](#overwrite-meal-plan-items)
-    + [Required fields using Summernote extension submit with just whitespace entered](#required-fields-using-summernote-extension-submit-with-just-whitespace-entered)
-    + [No Reverse Match Error](#no-reverse-match-error)
-    + [Cloudinary Images not Displaying](#cloudinary-images-not-displaying)
-    + [Footer not staying at bottom of screen](#footer-not-staying-at-bottom-of-screen)
-  * [Unfixed bugs:](#unfixed-bugs-)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-## User Story Testing
 
 
 ## Validator Testing
@@ -89,3 +60,40 @@ See the results in the below table.
 | login.html           | No errors  | No errors |
 | logout.html          | No errors  | No errors |
 | signup.html          | No errors  | No errors |
+
+### Python Validation - PEP8
+
+* Python testing was done using the PEP8 Online to ensure there were no syntax errors in the project. All python files
+were entered into the online checker and no errors were found in any of the custom codes.
+
+### Montessori Inspired - Blog
+* admin.py ![admin.py ](static/images/testing/blog.admin.png)
+* apps.py![apps](static/images/testing/blog.apps.png)
+* models.py![modles](static/images/testing/blog.models.png)
+* forms.py![forms](static/images/testing/blog.form.png)
+* signals.py![signals](static/images/testing/signals.png)
+* urls.py![urls](static/images/testing/blog.urls.png)
+* views.py![views](<static/images/testing/blog.views (2).png>)
+
+
+### Montessori Inspired - Posts
+* admin.py ![admin.py ](static/images/testing/blog.admin.png)
+* apps.py![apps](static/images/testing/blog.apps.png)
+* models.py![modles](static/images/testing/blog.models.png)
+* forms.py![forms](static/images/testing/blog.form.png)
+* signals.py![signals](static/images/testing/signals.png)
+* urls.py![urls](static/images/testing/blog.urls.png)
+* views.py![views](<static/images/testing/blog.views (2).png>)
+
+
+* [Lighthouse](#lighthouse)
+
+
+- [Bugs](#bugs)
+  * [Fixed Bugs](#fixed-bugs)
+
+  * [Unfixed bugs:](#unfixed-bugs-)
+
+## User Story Testing
+
+
