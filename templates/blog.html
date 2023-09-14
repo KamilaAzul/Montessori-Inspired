@@ -15,17 +15,14 @@
               <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
                 <div class="card-body">
                   <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
-                    <div class="image-container" class="Image_blog_box">
+                    <div class="image-container Image_blog_box">
                       {% if "placeholder" in post.featured_image.url %}
                       <div class="content-box bg-linear-gradient">
                         <div class="content-imgPhoto">
-                          <img class="card-img-top"
-                            src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png"
-                            style="max-height: 100%; max-width:100%" />
+                          <img class="card-img-top" src="https://res.cloudinary.com/dsyasuwlk/image/upload/v1693215328/dsq3xvfqdrlaogvsqisu.png" style="max-height: 100%; max-width:100%"/>
                           {% else %}
                           <div class="post_img1">
-                            <img class="card-img-top" src="{{ post.featured_image.url }}"
-                              style="max-height: 100%; max-width:100%;" alt="{{ result }} Image" />
+                            <img class="card-img-top" src="{{ post.featured_image.url }}" style="max-height: 100%; max-width:100%;" alt="{{ result }} Image"/>
                             {% endif %}
                           </div>
                           <div class="content-img">
@@ -44,7 +41,7 @@
                   <div class="card-text">
                     {{ post.content | slice:":250" | safe }}...
                   </div>
-                  <hr />
+                  <hr/>
                   <p class="card-text text-muted h6">Created by:
                     <span>{{ post.author }} | </span>
                     {{ post.created_on}} <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
