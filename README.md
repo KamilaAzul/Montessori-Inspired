@@ -442,7 +442,8 @@ DATABASES = {
   dj_database_url.parse(os.environ.get("DATABASE_URL"))
   }
 
-* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"
+* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by 
+  typing: os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"
 * In Heroku, click Reveal Config Vars and add a new record with the CLOUDINARY_URL
 * Add Cloudinary libraries to the installed apps section of settings.py file:
  
@@ -454,7 +455,8 @@ DATABASES = {
 
  Add Cloudinary URL to env.py
 * Add the cloudinary libraries to the list of installed apps.
-* Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+* Add the STATIC files settings - the url, storage path, directory path, root path, media url and default 
+  file storage path.
 * Link the file to the templates directory in Heroku.
 * Change the templates directory to TEMPLATES_DIR
 * Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
