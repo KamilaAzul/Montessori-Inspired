@@ -39,9 +39,11 @@ See the results in the below table.
 ### CSS
 
 All CSS file went through the[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-Just one error was found and I managed to fix it, however there are a lot's of warnings.
+
+Just one error was found (Unknown error java.lang.Exception: https://montessori-inspired-a464ed5581f4.herokuapp.com/static/css/style.css: Not Found)I didn't manage to fix it, however there are a lot's of warnings.
 See the results in the below table.
 
+![Alt text](static/images/testing/css.png)
 
 ### Python Validation - PEP8
 
@@ -172,6 +174,7 @@ The change in the post should be approved by the admin, however, the post is upd
 ### Unfixed bugs:
 * Whenever a user comments on a post, the Superuser has to approve it before it will be displayed on the website -  This functionality is not working correctly.
 * Not all interactive messages displaying correctly- they are not showing up after creating or editing the post.
+* Css-Unknown error java.lang.Exception: https://montessori-inspired-a464ed5581f4.herokuapp.com/static/css/style.css: Not Found
 
 ### To improve:
 
