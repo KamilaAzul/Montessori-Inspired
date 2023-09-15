@@ -39,7 +39,7 @@ See the results in the below table.
 ### CSS
 
 All CSS file went through the[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-There were found some errors but I managed to fix them.
+Just one error was found and I managed to fix it, however there are a lot's of warnings.
 See the results in the below table.
 
 

@@ -18,7 +18,6 @@ All comments and posts require approval by the administrator, who is responsible
     * [Main Site Goals](<#main-site-goals>)
 
 * [**User Experience (UX)**](<#user-experience-ux>)
-    * [Wireframes](<#wireframes>)
     * [User Stories](<#user-stories>)
     * [Site Structure](<#site-structure>)
     * [Design Choices](<#design-choices>)
@@ -55,13 +54,9 @@ All comments and posts require approval by the administrator, who is responsible
 
 
 * [**Testing**](<#testing>)
-    * [Testing User Stories](<#testing-user-stories>)
-    * [Code Validation](<#code-validation>)
-    * [Additional Testing](<#additional-testing>)
-    * [Known Bugs](<#known-bugs>)
-* [Deployment](<#deployment>)
-* [Credits](<#credits>)
-* [Acknowledgements](<#acknowledgements>)
+   * [Deployment](<#deployment>)
+   * [Credits](<#credits>)
+   * [Acknowledgements](<#acknowledgements>)
 
 ## Montessori-inspired-introduction
 
@@ -140,11 +135,6 @@ All functionality and development of this project were managed using GitHub whic
 
 
 ### User Experience (UX)
-
-## Wireframes
-
-TThe Wireframes were created by me by hand. Drawing gives me more flexibility and is for me more comfortable to make a chanages during the process.
-
 
 ## Site-structure
 
