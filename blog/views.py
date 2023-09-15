@@ -234,7 +234,6 @@ class EditPost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return reverse("user-posts")
 
 
-
 class UserPost(LoginRequiredMixin, generic.ListView):
     """
     Shows all posts of a logged-in user in one page

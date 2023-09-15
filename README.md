@@ -87,7 +87,7 @@ The website owner's goal is to provide a website where users will be able to rea
 ## Agile-methodology
 
 All functionality and development of this project were managed using GitHub which Projects can be found
-[here](https://github.com/…)
+[here](https://github.com/users/KamilaAzul/projects/10/views/1)
 
 ## Main Site Goals
 
@@ -189,7 +189,7 @@ The fonts used for the site are 'Roboto' and 'Lato'.
 
 ## Imagery
 
-All the images are related to Montessori Philosophy and the website design.
+All the images are related to Montessori Philosophy and the website design, they are uploadet from cloudinary.com.
 All other images will be uploaded by the authors to the database.
 
 ## Database-diagram
@@ -368,33 +368,21 @@ If the username exists or the password is too small the user will be guided by v
 
 * [Django](https://www.djangoproject.com/) was used as the framework for the back-end logic of the project. Django enables rapid and secure development.
 * [GitHub](https://github.com/)- Used to store the project's code after being pushed from Git.
+* [Git](https://git-scm.com/)- Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
 * [Heroku](https://id.heroku.com)- Used to deploy the live project.
 * [Bootstrap](https://getbootstrap.com/)- Used to style the website, add responsiveness and interactivity.
 * [Git](https://git-scm.com/)- Used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
 * [PostgreSQL](https://www.postgresql.org/)- Database used through heroku.
 * [Google Fonts:](https://fonts.google.com/) used for the Roboto font
 * [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+* [CANVA](https://www.canva.com/)- To build the logos for the project.
+* [Coolors](https://coolors.co/)- To build the colour palette of the project
 * [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to inspect page elements, debug, troubleshoot and test features and adjust property values. Using the Lighthouse extension installed in Chrome Browser, the performance report was generated.
 
 
 ## Testing
 
-
-### Validation
-I used the following validation tools to validate HTML, CSS, PYTHON codes. Below the link of TESTING.md file, which includes all validation results.  
-- HTML using [W3C HTML validator](https://validator.w3.org/)
-- CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
-- Python via [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/)
-
-
-### Manual Testing
-
-Testing has taken place continuously throughout the development of the project. Each view was tested regularly.
-
-    * Testing User Stories
-    * Code Validation
-    * Additional Testing
-    * Known Bugs
+Testing results [here](TESTING.md)
 
 
 [Back to top](<#contents>)
@@ -405,19 +393,19 @@ Testing has taken place continuously throughout the development of the project. 
 
 ### 1. Creating the Django Project
 * Go to the Code Institute Gitpod Full Template [Template](https://github.com/Code-Institute-Org/gitpod-full-template).
-* Click on `Use This Template` button, then create new repository.
-* Name our repository and click on `Create repository from template` button.
-* Once the template is available in your repository click on `Gitpod` button.
+* Click on *Use This Template* button, then create new repository.
+* Name our repository and click on *Create repository from template* button.
+* Once the template is available in your repository click on *Gitpod* button.
 * When the image for the template and the Gitpod are ready, open a new terminal to start a new Django App.
-* Install Django and gunicorn: `pip3 install 'django<4' gunicorn`.
-* Install supporting database libraries dj_database_url and psycopg2 library: `pip3 install dj_database_url==0.5.0 psycopg2`.
-* Install Cloudinary libraries to manage static files: `pip install dj-3-cloudinary-storage`.
-* Create file for requirements: `pip freeze --local > requirements.txt`.
-* Create project:`django-admin startproject project_name .`.
-* Create app: `python manage.py startapp app_name`.
-* Add app to list of `installed apps` in settings.py file: `'app_name'`.
-* Migrate changes: `python manage.py migrate`.
-* Test server works locally: `python manage.py runserver`.
+* Install Django and gunicorn: *pip3 install 'django<4' gunicorn*.
+* Install supporting database libraries dj_database_url and psycopg2 library: *pip3 install dj_database_url==0.5.0 psycopg2*.
+* Install Cloudinary libraries to manage static files: *pip install dj-3-cloudinary-storage*.
+* Create file for requirements: *pip freeze --local > requirements.txt*.
+* Create project:*django-admin startproject project_name*.
+* Create app: *python manage.py startapp app_name*.
+* Add app to list of installed apps *in settings.py file: 'app_name'*.
+* Migrate changes: *python manage.py migrate*.
+* Test server works locally: *python manage.py runserver*.
 * If the app has been installed correctly the window will display- The install worked successfully! Congratulations!
 
 
@@ -429,51 +417,50 @@ Testing has taken place continuously throughout the development of the project. 
 * Enter a unique name for the application.
 * Select the appropriate region for the application.
 * Click create app.
-* Click Reveal Config Vars and add a new record with `DATABASE_URL`.
-* Click Reveal Config Vars and add a new record with `PORT`.
-* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`(note: this must be either removed or set to 0 for final deployment).
-* Next, scroll down to the Buildpack section, click `Add Buildpack` select python and click Save Changes.
+* Click Reveal Config Vars and add a new record with *DATABASE_URL*.
+* Click Reveal Config Vars and add a new record with *PORT*.
+* Click Reveal Config Vars and add a new record with the *DISABLE_COLLECTSTATIC = 1*(note: this must be either removed or set to  
+  0 for final deployment).
+* Next, scroll down to the Buildpack section, click *Add Buildpack* select python and click Save Changes.
 
 
 ### 3. Set up Environment Variables
 * In you IDE create a new env.py file in the top level directory.
 * Add env.py to the .gitignore file.
 * In env.py import the os library.
-* In env.py add `os.environ["DATABASE_URL"]` = "Paste the link copied from Heroku DATABASE_URL".
-* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"`.
-* In Heroku Settings tab Config Vars enter the same `SECRET_KEY` created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
+* In env.py add *os.environ["DATABASE_URL"]* = "Paste the link copied from Heroku DATABASE_URL".
+* In env.py add *os.environ["SECRET_KEY"] = "Make up your own random secret key"*.
+* In Heroku Settings tab Config Vars enter the same *SECRET_KEY* created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
 
 
 ### 4. Setting up settings.py
 * In your Django 'settings.py' file type:
 
-
- ```
  from pathlib import Path
  import os
  import dj_database_url
 
-
  if os.path.isfile("env.py"):
   import env
- ```
-* Remove the default insecure secret key in settings.py and replace with the link to the secret key variable in Heroku by typing: `SECRET_KEY = os.environ.get(SECRET_KEY)`
-* Comment out the `DATABASES` section in settings.py and replace with:
-```
+ 
+* Remove the default insecure secret key in settings.py and replace with the link to the secret key variable in Heroku by typing: 
+  SECRET_KEY = os.environ.get(SECRET_KEY)
+* Comment out the DATABASES section in settings.py and replace with:
+
 DATABASES = {
-  'default':
+  default':
   dj_database_url.parse(os.environ.get("DATABASE_URL"))
-  }`
-```
-* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: `os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"`
-* In Heroku, click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
+  }
+
+* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"
+* In Heroku, click Reveal Config Vars and add a new record with the CLOUDINARY_URL
 * Add Cloudinary libraries to the installed apps section of settings.py file:
  
  'cloudinary_storage'
  'django.contrib.staticfiles''
  'cloudinary'
 
-* Connect Cloudinary to the Django app in `settings.py`
+* Connect Cloudinary to the Django app in settings.py
 
  Add Cloudinary URL to env.py
 * Add the cloudinary libraries to the list of installed apps.
@@ -481,7 +468,7 @@ DATABASES = {
 * Link the file to the templates directory in Heroku.
 * Change the templates directory to TEMPLATES_DIR
 * Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
-* Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: `'DIRS': [TEMPLATES_DIR]`
+* Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: 'DIRS': [TEMPLATES_DIR]
 * Add Heroku Hostname to ALLOWED_HOSTS.
 * Create Procfile at the top level of the file structure.
 * Commit and push the code to the GitHub Repository.
@@ -492,22 +479,34 @@ DATABASES = {
 * Click Deploy tab in Heroku.
 * Select Github as the deployment method.
 * Confirm you want to connect to GitHub.
-* Search for the repository name and click the connect button to link the heroku app with the Github repository. The box will confirm that heroku 
-  is connected to the repository.
+* Search for the repository name and click the connect button to link the heroku app with the Github repository. The box will 
+  confirm that heroku is connected to the repository.
 * Scroll to the bottom of the deploy page and select the preferred deployment type.
-* Click either Enable Automatic Deploys for automatic deployment when you push updates to Github or To manually deploy click the button 'Deploy 
+* Click either Enable Automatic Deploys for automatic deployment when you push updates to Github or To manually deploy click the 
+  button 'Deploy 
   Branch'. The default 'main' option in the dropdown menu should be selected in both cases. 
-* When development is complete change the debug setting to: `DEBUG = False` in settings.py
-* In this project the summernote editor was used so for this to work in Heroku add: `X_FRAME_OPTIONS = SAMEORIGIN `to
+* When development is complete change the debug setting to: DEBUG = False in settings.py
+* In this project the summernote editor was used so for this to work in Heroku add: X_FRAME_OPTIONS = SAMEORIGIN`to
   settings.py.
-* In Heroku settings, delete the config vars for `DISABLE_COLLECTSTATIC = 1`
-* Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. 
-  Manually deployed branches will need re-deploying each time the repo is updated.
+* In Heroku settings, delete the config vars for DISABLE_COLLECTSTATIC = 1
+* Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch 
+  manually.If Manuall deployement is choosen the branches will need re-deploying each time the repo is updated.
 * When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
 
 
 [Back to top](<#contents>)
 
+## Credits
+
+### Content
+
+* [Bootstrap 4.6 Docs](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+* The images were taken from [Freepik](https://www.freepik.com/),
+  [Pixabay](https://pixabay.com/),[Pexels](https://www.pexels.com//) 
+* The Tasty Blog logos and favicon were created usig [CANVA](https://www.canva.com/)
+* [Code Institute - Blog Walkthrough Project](https://github.com/Code-Institute-Solutions/Django3blog)
+* [W3Schools](https://www.w3schools.com/)
+* [Django Docs](https://docs.djangoproject.com/en/4.0/)
 
 ## Acknowledgements
 
