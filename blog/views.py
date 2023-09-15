@@ -10,7 +10,7 @@ from django.views.generic import UpdateView
 from .forms import PostForm,  ProfileUpdateForm, UserUpdateForm, CommentForm
 from .forms import UpdatePostForm
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 
 
@@ -22,6 +22,9 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
+    """
+    Renders the post detail Page
+    """
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -43,7 +46,11 @@ class PostDetail(View):
             },
         )
 
+
     def post(self, request, slug, *args, **kwargs):
+        """
+        Comment on the posts
+        """
 
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -86,6 +93,9 @@ class AllBlogPost(generic.ListView):
 
 
 class PostLike(View):
+    """
+    Like/Unlike posts
+    """
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -122,6 +132,9 @@ def categories_view(request, categ):
 
 
 class AddCategoriesView(CreateView):
+    """
+    Renders the posts filtered by categories
+    """
     model = Category
     template_name = "categories_post.html"
     fields = ('title',)
@@ -129,7 +142,7 @@ class AddCategoriesView(CreateView):
 
 def search(request):
     """
-    search results
+    Renders the search results
     """
     queryset = request.GET.get('q')
     post = Post.objects.filter(Q(title__icontains=queryset) |
@@ -166,6 +179,9 @@ class DeletePost(generic.DeleteView):
 
 @login_required
 def create_post(request):
+    """
+    Creating the post
+    """
     context = {}
     form = PostForm(request.POST or None)
     if request.method == "POST":
@@ -186,6 +202,7 @@ def create_post(request):
     return render(request, 'new_post.html', context)
 
 class EditPost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+
     """
     Edit Post
     """
@@ -194,6 +211,21 @@ class EditPost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'update_post.html'
     success_message = 'The post was successfully updated'
 
+    def form_valid(self, form):
+        """
+        A valid form data has been posted.
+        The signed in user is as the author of the post
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    def test_func(self):
+        """
+        Doesn't allow another user update other authors posts
+        """
+        post = self.get_object()
+        return post.author == self.request.user
+        
     def get_success_url(self):
         """
         Set the reverse url for the successful delete
@@ -250,7 +282,7 @@ class EditComment(
         """ Return to post detail view when comment updated 
         successfully"""
         post = self.object.post
-        return reverse_lazy('post_detail', kwargs={'slug': post.slug})
+        return reverse('post_detail', kwargs={'slug': post.slug})
 
 
 @login_required
@@ -267,7 +299,7 @@ def delete_comment(request, comment_id):
 
 class Profile(generic.TemplateView):
     """
-    This class creates a context with all objects from the UserProfile
+    This class creates a User Profile
     model.
     """
 
