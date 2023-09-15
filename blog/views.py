@@ -218,14 +218,39 @@ class UserPost(LoginRequiredMixin, generic.ListView):
         )
 
 
-class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class EditComment(
+        LoginRequiredMixin, UserPassesTestMixin,
+        SuccessMessageMixin, generic.UpdateView):
+
     """
-    Edit comment
+    This view is used to allow logged in users to edit their own comments
     """
     model = Comment
-    template_name = 'edit_comment.html'
     form_class = CommentForm
+    template_name = 'edit_comment.html'
     success_message = 'The comment was successfully updated'
+
+    def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        The signed in user is set as the author of the comment.
+        """
+        form.instance.name = self.request.user.username
+        return super().form_valid(form)
+
+    def test_func(self):
+        """
+        Doesn't allow another user to edit the comments of a particular 
+        author
+        """
+        comment = self.get_object()
+        return comment.name == self.request.user.username
+
+    def get_success_url(self):
+        """ Return to post detail view when comment updated 
+        successfully"""
+        post = self.object.post
+        return reverse_lazy('post_detail', kwargs={'slug': post.slug})
 
 
 @login_required
