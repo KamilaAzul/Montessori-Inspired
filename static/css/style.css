@@ -91,7 +91,15 @@ html {
 .card-title {
     padding-top: 20px;
 }
+.content-img {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -8px;
+    color: #f5f1f1;
+    background-color: rgb(155, 110, 59);
 
+}
 
 .content-box {
     -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
@@ -420,7 +428,7 @@ html {
     background-color: #ddcfcc;
     text-decoration: none;
     font-size: 1.4rem;
-    font-weight: 20px;
+    font-weight: 20;
     margin-top: 20px;
     margin-bottom: 130px;
     -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
@@ -428,10 +436,6 @@ html {
 
 }
 
-#serchPostDescription {
- 
-
-}
 
 #searched-text {
     padding-top: 30px;
@@ -441,7 +445,6 @@ html {
 
     margin-top: 60px;
 }
-
 
 #searched-box h2 {
 
@@ -459,18 +462,11 @@ html {
    
 }
 
-#serchPostDescription h2 {
-   
-
-}
-
 #ForgorToSeach {
 
     padding-top: 70px;
     text-align: center;
     font-size: 30px;
-
-
 }
 
 #searched-box h2 {
@@ -482,7 +478,6 @@ html {
     position: relative;
 
 }
-
 
 /*Sign in, Sign up, Logout*/
 #signup_page .container,
@@ -542,6 +537,7 @@ mark {
 .image-container {
     position: relative;
 }
+
 
 
 .post-link {
