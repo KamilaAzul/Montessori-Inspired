@@ -14,9 +14,7 @@ html {
 
 .fas,
 .far,
-.fab,
 .fa,
-.fa-solid,
 .dropdown-toggle::after {
     margin-right: 6px;
     cursor: pointer;
@@ -541,24 +539,10 @@ mark {
     background-color: #F9FAFC;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
-}
-
 .image-container {
     position: relative;
 }
 
-.content-img {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -8px;
-    color: #f5f1f1;
-    background-color: rgb(155, 110, 59);
-
-}
 
 .post-link {
     text-decoration: none;

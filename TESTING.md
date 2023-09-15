@@ -70,38 +70,20 @@ were entered into the online checker and no errors were found in any of the cust
 
 ### Lighthouse
 
-Lighthouse validation was run on all pages (both mobile and desktop) in order to check accessibility and performance.
+Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop.
 
-| Page           | Performance  | Accessibility | Best Practices  | SEO |
-|----------------|:------------:|:-------------:|:---------------:|:---:|
-|                |              |               |                 |     |
-| Desktop        |              |               |                 |     |
-| Home           |          100 |           100 |             100 | 100 |
-| About us       |           99 |            98 |             100 | 100 |
-| Blog           |           99 |           100 |             100 | 100 |
-| My posts       |           99 |           100 |             100 | 100 |
-| Post detail    |           99 |           100 |             100 | 100 |
-| Add post       |           99 |            98 |             100 | 100 |
-| Update Comment |           99 |           100 |             100 | 100 |
-| Update Post    |           99 |           100 |             100 | 100 |
-| Login          |           99 |           100 |             100 | 100 |
-| Logout         |           99 |           100 |             100 | 100 |
-| Signup         |           99 |           100 |             100 | 100 |
-|                |              |               |                 |     |
-| Mobile         |              |               |                 |     |
-| Desktop        |              |               |                 |     |
-| Home           |          100 |           100 |             100 | 100 |
-| About us       |           99 |            98 |             100 | 100 |
-| Blog           |           99 |           100 |             100 | 100 |
-| My posts       |           99 |           100 |             100 | 100 |
-| Post detail    |           99 |           100 |             100 | 100 |
-| Add post       |           99 |            98 |             100 | 100 |
-| Update Comment |           99 |           100 |             100 | 100 |
-| Update Post    |           99 |           100 |             100 | 100 |
-| Login          |           99 |           100 |             100 | 100 |
-| Logout         |           99 |           100 |             100 | 100 |
-| Signup         |           99 |           100 |             100 | 100 |
-
+* Home page for desktop
+![Alt text](static/images/testing/lighthouseHomePageDetscop.png)
+* Home page for mobiile
+![Alt text](static/images/testing/lighthouseHomePageMobile.png)
+* Blog page for desktop
+![Alt text](static/images/testing/lighthouse1.png)
+* Blog page for mobile
+![Alt text](static/images/testing/lighthouseBlogMobile.png)
+* About page for desktop
+![Alt text](static/images/testing/lighthouseAboutPageDesktop.png)
+* About page for mobile
+![Alt text](static/images/testing/lighthouseAboutPageMobile.png)
 
 ## User Story Testing
 
